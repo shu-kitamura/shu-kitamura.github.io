@@ -1,6 +1,8 @@
 "use client"
 
 import * as React from "react"
+import { Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes";
 
 import Image from "next/image";
 
@@ -18,6 +20,7 @@ import {
 
 export default function Home() {
   const [position, setPosition] = React.useState("system")
+  const { setTheme } = useTheme()
   return (
     <div>
       <header className="flex flex-col items-center py-5 bg-gray-300 dark:bg-gray-700">
@@ -28,16 +31,22 @@ export default function Home() {
           <div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline">☀️</Button>
+                <Button variant="ghost" size="default">
+                  <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-10 dark:-rotate-90" />
+                  <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-10">
-                <DropdownMenuLabel>テーマ</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-                  <DropdownMenuRadioItem value="system">システム</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="light">ライト</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="dark">ダーク</DropdownMenuRadioItem>
-                </DropdownMenuRadioGroup>
+              <DropdownMenuContent align="end" className="w-10">
+                  <DropdownMenuRadioItem value="system" onClick={() => setTheme("system")}>
+                    システム
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="light" onClick={() => setTheme("light")}>
+                    ライト
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="dark" onClick={() => setTheme("dark")}>
+                    ダーク
+                  </DropdownMenuRadioItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
