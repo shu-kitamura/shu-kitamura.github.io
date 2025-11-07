@@ -19,17 +19,18 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar"
+import { Label } from "@/components/ui/label"
 
 
 export default function Home() {
   const { setTheme } = useTheme()
   return (
     <div>
-      <header className="flex flex-col items-center bg-gray-300 dark:bg-gray-700">
-        <div className="w-full sm:w-1/3">
+      <header className="flex flex-col items-center bg-gray-500 dark:bg-gray-900">
+        <div className="w-full sm:w-1/2" >
           <div className="flex justify-between py-2">
-            <h1 className="text-4xl font-extrabold text-zinc-900 dark:text-white">
-              shu-kitamura
+            <h1 className="text-4xl font-extrabold">
+              Header Menu
             </h1>
             <div>
               <DropdownMenu>
@@ -54,7 +55,32 @@ export default function Home() {
               </DropdownMenu>
             </div>
           </div>
-          <div className="flex py-2">
+        </div>
+      </header>
+      <main className="flex flex-col items-center bg-gray-300 dark:bg-gray-800">
+        <div className="w-full sm:w-1/2">
+          <h2 className="text-4xl font-extrabold">
+            Profile
+          </h2>
+          <div className="flex justify-center">
+            <Label>
+              <Image
+                src="/icon-light.svg"
+                alt="Under Construction"
+                width={200}
+                height={200}
+                className="scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100"
+              />
+              <Image
+                src="/icon-dark.svg"
+                alt="Under Construction"
+                width={200}
+                height={200}
+                className="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
+              />
+            </Label>
+          </div>
+          <div className="flex justify-center py-2">
             <Button variant="ghost" size="icon" className="mr-2" asChild>
               <Link href="https://github.com/shu-kitamura">
                 <Avatar className="scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100">
@@ -76,19 +102,20 @@ export default function Home() {
               </Link>
             </Button>
           </div>
-        </div>
-      </header>
-      <main className="flex justify-center">
-        <div className="p-5">
-          <Image
-            src="/underConst.png"
-            alt="Under Construction"
-            width={400}
-            height={400}
-          />
+          <div className="flex justify-center py-2">
+            作成中...
+          </div>
+          <div className="flex justify-center py-4">
+            <Image
+              src="/underConst.png"
+              alt="Under Construction"
+              width={400}
+              height={400}
+            />
+          </div>
         </div>
       </main>
-      <footer>
+      <footer className="bg-gray-500 dark:bg-gray-900">
         <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
           © 2024 shu-kitamura
         </p>
