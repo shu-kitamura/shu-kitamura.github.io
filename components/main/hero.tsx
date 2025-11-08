@@ -29,7 +29,7 @@ export default function Hero() {
         />
       </Label>
       <div className="flex flex-col justify-center gap-2">
-        <h2 className="text-4xl font-extrabold">
+        <h2 className="text-3xl sm:text-4xl font-extrabold">
           shu-kitamura
         </h2>
         <div>
