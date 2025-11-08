@@ -1,9 +1,10 @@
 "use client"
 
-import { Moon, Sun, CircleUserRound, Info } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button"
 import {
@@ -12,9 +13,15 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
+import { Label } from "@/components/ui/label"
 
-import Profile from "@/components/main/profile"
 import AboutMe from "@/components/main/aboutMe"
+import Hero from "@/components/main/hero";
 
 export default function Home() {
   const { setTheme } = useTheme()
@@ -52,7 +59,7 @@ export default function Home() {
         </div>
       </header>
       <main className="flex flex-col items-center bg-gray-300 dark:bg-gray-800">
-        <Profile />
+        <Hero />
         <AboutMe />
         <div className="flex justify-center">
           <h2 className="text-4xl font-extrabold">

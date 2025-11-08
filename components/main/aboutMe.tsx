@@ -19,10 +19,16 @@ export default function AboutMe() {
     <Section sectionId="aboutMe-section" contents={
       <div>
         <Title title="ABOUT ME" icon={<Info className="w-10 h-10" />} />
-        <div className="flex justify-center my-4">
-          <Label>
-            私について（準備中）
-          </Label>
+        <div className="flex flex-col items-center">
+          <p>
+            ネットワーク/インフラが得意です。
+          </p>
+          <p>
+            Linux, PostgreSQL, Azure
+          </p>
+          <p>
+            使用言語は主に Python, Rust
+          </p>
         </div>
       </div>
     } />
