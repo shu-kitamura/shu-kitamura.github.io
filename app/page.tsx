@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun, CircleUserRound } from "lucide-react"
 import { useTheme } from "next-themes";
 
 import Image from "next/image";
@@ -58,11 +58,14 @@ export default function Home() {
         </div>
       </header>
       <main className="flex flex-col items-center bg-gray-300 dark:bg-gray-800">
-        <div className="w-full sm:w-1/2">
-          <h2 className="text-4xl font-extrabold">
-            Profile
-          </h2>
-          <div className="flex justify-center">
+        <div className="w-full sm:w-1/2 my-5 bg-gray-100 dark:bg-gray-600" id="hero-section">
+          <div className="flex items-start p-2">
+            <CircleUserRound className="w-10 h-10" />
+            <h2 className="text-4xl font-extrabold">
+              PROFILE
+            </h2>
+          </div>
+          <div className="flex justify-center my-4">
             <Label>
               <Image
                 src="/icon-light.svg"
@@ -80,7 +83,21 @@ export default function Home() {
               />
             </Label>
           </div>
-          <div className="flex justify-center py-2">
+          <div className="flex flex-col items-center">
+            <h2 className="text-4xl font-extrabold mb-2">
+              shu-kitamura
+            </h2>
+            <p>
+              ネットワーク/インフラが得意です。
+            </p>
+            <p>
+              Linux, PostgreSQL, Azure
+            </p>
+            <p>
+              使用言語は主に Python, Rust
+            </p>
+          </div>
+          <div className="flex justify-center my-2">
             <Button variant="ghost" size="icon" className="mr-2" asChild>
               <Link href="https://github.com/shu-kitamura">
                 <Avatar className="rounded-none scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100">
@@ -114,17 +131,19 @@ export default function Home() {
               </Link>
             </Button>
           </div>
-          <div className="flex justify-center py-2">
-            作成中...
-          </div>
-          <div className="flex justify-center py-4">
-            <Image
-              src="/underConst.png"
-              alt="Under Construction"
-              width={400}
-              height={400}
-            />
-          </div>
+        </div>
+        <div className="flex justify-center">
+          <h2 className="text-4xl font-extrabold">
+            ---作成中---
+          </h2>
+        </div>
+        <div className="flex justify-center py-4">
+          <Image
+            src="/underConst.png"
+            alt="Under Construction"
+            width={400}
+            height={400}
+          />
         </div>
       </main>
       <footer className="bg-gray-500 dark:bg-gray-900">
