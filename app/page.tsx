@@ -4,27 +4,16 @@ import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes";
 
 import Image from "next/image";
-import Link from "next/link";
 
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
-import { Label } from "@/components/ui/label"
 
 import AboutMe from "@/components/main/aboutMe"
 import Hero from "@/components/main/hero";
 
+
 export default function Home() {
   const { setTheme } = useTheme()
+  const { theme } = useTheme()
   return (
     <div>
       <header className="flex flex-col items-center bg-gray-500 dark:bg-gray-900">
@@ -33,28 +22,13 @@ export default function Home() {
             <h1 className="text-4xl font-extrabold">
               Header Menu
             </h1>
-            <div>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100" />
-                    <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                    <span className="sr-only">Toggle theme</span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-10">
-                    <DropdownMenuRadioItem value="system" onClick={() => setTheme("system")}>
-                      システム
-                    </DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="light" onClick={() => setTheme("light")}>
-                      ライト
-                    </DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="dark" onClick={() => setTheme("dark")}>
-                      ダーク
-                    </DropdownMenuRadioItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+            <Button variant="ghost" size="icon" onClick={() => {
+              setTheme(theme === "dark" ? "light" : "dark")
+            }}>
+              <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100" />
+              <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
           </div>
         </div>
       </header>
