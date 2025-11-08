@@ -84,11 +84,11 @@ export default function Home() {
             <Button variant="ghost" size="icon" className="mr-2" asChild>
               <Link href="https://github.com/shu-kitamura">
                 <Avatar className="rounded-none scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100">
-                  <AvatarImage src="/github-mark.svg" alt="GitHub icon" />
+                  <AvatarImage src="/logos/github/github-mark-light.svg" alt="GitHub icon" />
                   <AvatarFallback>GitHub</AvatarFallback>
                 </Avatar>
                 <Avatar className="rounded-none absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0">
-                  <AvatarImage src="/github-mark-white.svg" alt="GitHub icon" />
+                  <AvatarImage src="/logos/github/github-mark-dark.svg" alt="GitHub icon" />
                   <AvatarFallback>GitHub</AvatarFallback>
                 </Avatar>
               </Link>
@@ -96,11 +96,11 @@ export default function Home() {
             <Button variant="ghost" size="icon" className="mr-2" asChild>
               <Link href="https://x.com/prog_shu">
                 <Avatar className="rounded-none scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100">
-                  <AvatarImage src="/x-mark-light.svg" alt="X icon" />
+                  <AvatarImage src="/logos/x/x-mark-light.svg" alt="X icon" />
                   <AvatarFallback>X</AvatarFallback>
                 </Avatar>
                 <Avatar className="rounded-none absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0">
-                  <AvatarImage src="/x-mark-dark.svg" alt="X icon" />
+                  <AvatarImage src="/logos/x/x-mark-dark.svg" alt="X icon" />
                   <AvatarFallback>X</AvatarFallback>
                 </Avatar>
               </Link>
@@ -108,7 +108,7 @@ export default function Home() {
             <Button variant="ghost" size="icon">
               <Link href="https://zenn.dev/shu_kitamura">
                 <Avatar className="rounded-none">
-                  <AvatarImage src="/zenn-mark.svg" alt="Zenn icon" />
+                  <AvatarImage src="/logos/zenn/zenn-mark.svg" alt="Zenn icon" />
                   <AvatarFallback>Zenn</AvatarFallback>
                 </Avatar>
               </Link>
