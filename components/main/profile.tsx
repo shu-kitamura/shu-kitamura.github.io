@@ -1,5 +1,3 @@
-import { CircleUserRound,} from "lucide-react"
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,7 +16,7 @@ export default function Profile() {
   return (
     <Section sectionId="hero-section" contents={
       <div>
-        <Title title="PROFILE" icon={<CircleUserRound className="w-10 h-10" />} />
+        <Title title="PROFILE" />
         <div className="flex justify-center">
           <Label>
             <Image
