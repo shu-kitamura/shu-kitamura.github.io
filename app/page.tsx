@@ -8,7 +8,9 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button"
 
 import AboutMe from "@/components/main/aboutMe"
+import Certification from "@/components/main/certification";
 import Hero from "@/components/main/hero";
+import Project from "@/components/main/project";
 
 
 export default function Home() {
@@ -35,6 +37,8 @@ export default function Home() {
       <main className="flex flex-col items-center bg-gray-300 dark:bg-gray-800">
         <Hero />
         <AboutMe />
+        <Project />
+        <Certification />
         <div className="flex justify-center">
           <h2 className="text-4xl font-extrabold">
             ---作成中---

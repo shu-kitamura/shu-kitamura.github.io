@@ -1,36 +1,26 @@
-import { CircleUserRound, Info } from "lucide-react"
-
-import Image from "next/image";
-import Link from "next/link";
-
-import { Button } from "@/components/ui/button"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
-import { Label } from "@/components/ui/label"
-
 import Title from "@/components/main/utils/title";
 import Section from "@/components/main/utils/section";
 
 export default function AboutMe() {
   return (
     <Section sectionId="aboutMe-section" contents={
-      <div>
-        <Title title="ABOUT ME" icon={<Info className="w-10 h-10" />} />
-        <div className="flex flex-col items-center">
+      <section>
+        <Title title="About Me" />
+        <div className="flex flex-col items-start space-y-2 p-2">
           <p>
-            ネットワーク/インフラが得意です。
+            大阪出身、札幌在住。
           </p>
           <p>
-            Linux, PostgreSQL, Azure
+            SIer 企業でサーバ開発・保守の業務をしています。
           </p>
           <p>
-            使用言語は主に Python, Rust
+            CLIツールとバックエンドの開発が好きです。Rust, Pythonを使っています。
+          </p>
+          <p>
+            最近はWebアプリ開発(Next.js, FastAPI)にも興味があります。
           </p>
         </div>
-      </div>
+      </section>
     } />
   );
 }
