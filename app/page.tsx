@@ -7,6 +7,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import AboutMe from "@/components/main/aboutMe"
 import Certification from "@/components/main/certification";
@@ -51,6 +52,12 @@ export default function Home() {
               <span className="sr-only">Toggle theme</span>
             </Button>
           </div>
+          <Tabs defaultValue="work" className="w-[400px]">
+            <TabsList className="bg-gray-500 dark:bg-gray-900">
+              <TabsTrigger value="work" className="data-[state=active]:bg-gray-400 dark:data-[state=active]:bg-gray-700">技術者として</TabsTrigger>
+              <TabsTrigger value="pastime" className="data-[state=active]:bg-gray-400 dark:data-[state=active]:bg-gray-700">人として</TabsTrigger>
+            </TabsList>
+          </Tabs>
         </div>
       </header>
       <main className="flex flex-col items-center bg-gray-300 dark:bg-gray-800">
