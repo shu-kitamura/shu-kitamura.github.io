@@ -6,6 +6,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label"
 
 import AboutMe from "@/components/main/aboutMe"
 import Certification from "@/components/main/certification";
@@ -19,11 +20,29 @@ export default function Home() {
   return (
     <div>
       <header className="flex flex-col items-center bg-gray-500 dark:bg-gray-900">
-        <div className="w-full sm:w-1/2" >
-          <div className="flex justify-between py-2">
-            <h1 className="text-4xl font-extrabold">
-              Header Menu
-            </h1>
+        <div className="w-full sm:w-1/2">
+          <div className="flex justify-between items-center py-2">
+            <div className="flex items-center space-x-2">
+              <Label>
+                <Image
+                  src="/icon-light.svg"
+                  alt="shu-kitamura icon"
+                  width={60}
+                  height={60}
+                  className="scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100"
+                />
+                <Image
+                  src="/icon-dark.svg"
+                  alt="shu-kitamura icon"
+                  width={60}
+                  height={60}
+                  className="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
+                />
+              </Label>
+              <h1 className="text-4xl sm:text-5xl font-extrabold">
+                shu-kitamura
+              </h1>
+            </div>            
             <Button variant="ghost" size="icon" onClick={() => {
               setTheme(theme === "dark" ? "light" : "dark")
             }}>
