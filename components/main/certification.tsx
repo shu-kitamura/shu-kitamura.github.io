@@ -46,7 +46,7 @@ export default function Certification() {
             所有資格一覧です。
           </p>
           {certifications.map((certification, index) => (
-            <Item key={index} variant="outline" className="w-full">
+            <Item key={index} variant="outline" className="w-full border-2 border-black/30 dark:border-white/30">
               <ItemMedia variant="icon">
                 {certification.icon}
               </ItemMedia>
