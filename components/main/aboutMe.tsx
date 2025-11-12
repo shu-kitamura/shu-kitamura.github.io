@@ -13,7 +13,7 @@ import Section from "@/components/main/utils/section";
 export default function AboutMe() {
   return (
     <Section sectionId="aboutMe-section" contents={
-      <section>
+      <div>
         <div className="flex items-center mb-2">
           <Title title="About Me" />
           <Button variant="ghost" size="icon" asChild>
@@ -63,7 +63,7 @@ export default function AboutMe() {
             最近はWebアプリ開発(Next.js, FastAPI)にも興味があります。
           </p>
         </div>
-      </section>
+      </div>
     } />
   );
 }

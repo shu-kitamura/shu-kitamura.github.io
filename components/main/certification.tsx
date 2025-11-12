@@ -39,7 +39,7 @@ export default function Certification() {
   ]
   return (
     <Section sectionId="certification-section" contents={
-      <section>
+      <div>
         <Title title="Certification" />
         <div className="flex flex-col items-start space-y-2 p-2">
           <p>
@@ -59,7 +59,7 @@ export default function Certification() {
           </Item>
           ))}
         </div>
-      </section>
+      </div>
     } />
   );
 }
