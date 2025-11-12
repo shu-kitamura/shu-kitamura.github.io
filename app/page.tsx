@@ -11,7 +11,6 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import AboutMe from "@/components/main/aboutMe"
 import Certification from "@/components/main/certification";
-import Hero from "@/components/main/hero";
 import Project from "@/components/main/project";
 
 
@@ -64,19 +63,6 @@ export default function Home() {
         <AboutMe />
         <Project />
         <Certification />
-        <div className="flex justify-center">
-          <h2 className="text-4xl font-extrabold">
-            ---作成中---
-          </h2>
-        </div>
-        <div className="flex justify-center py-4">
-          <Image
-            src="/underConst.png"
-            alt="Under Construction"
-            width={400}
-            height={400}
-          />
-        </div>
       </main>
       <footer className="bg-gray-500 dark:bg-gray-900">
         <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
