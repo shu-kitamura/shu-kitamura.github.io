@@ -10,10 +10,28 @@ import {
 import Title from "@/components/main/utils/title";
 import Section from "@/components/main/utils/section";
 
-export default function AboutMe() {
+type AboutMeProps = {
+  variant: "work" | "pastime";
+}
+
+export default function AboutMe({ variant }: AboutMeProps) {
+  const texts = {
+    "work": [
+      "大阪出身、札幌在住。",
+      "SIer 企業でサーバ開発・保守の業務をしています。",
+      "CLIツールとバックエンドの開発が好きです。Rust, Pythonを使っています。",
+      "最近はWebアプリ開発(Next.js, FastAPI)にも興味があります。",
+    ],
+    "pastime": [
+      "大阪出身、札幌在住。",
+      "中高でソフトテニスをやっていました。",
+      "今は硬式テニスとフットサルをやっています。",
+      "お笑いが好きです。実家に帰ったときに見に行きます。"
+    ]
+  }
   return (
     <Section sectionId="aboutMe-section" contents={
-      <div>
+      <>
         <div className="flex items-center mb-2">
           <Title title="About Me" />
           <Button variant="ghost" size="icon" asChild>
@@ -50,20 +68,11 @@ export default function AboutMe() {
           </Button>
         </div>
         <div className="flex flex-col items-start space-y-2 p-2">
-          <p>
-            大阪出身、札幌在住。
-          </p>
-          <p>
-            SIer 企業でサーバ開発・保守の業務をしています。
-          </p>
-          <p>
-            CLIツールとバックエンドの開発が好きです。Rust, Pythonを使っています。
-          </p>
-          <p>
-            最近はWebアプリ開発(Next.js, FastAPI)にも興味があります。
-          </p>
+          {texts[variant].map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
         </div>
-      </div>
+      </>
     } />
   );
 }

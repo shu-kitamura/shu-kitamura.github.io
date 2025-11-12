@@ -15,7 +15,7 @@ import Section from "@/components/main/utils/section";
 export default function Project() {
   return (
     <Section sectionId="project-section" contents={
-      <div>
+      <>
         <Title title="Project" />
         <div className="flex flex-col items-start space-y-2 p-2">
           <p>
@@ -63,7 +63,7 @@ export default function Project() {
             </ItemContent>
           </Item>
         </div>
-      </div>
+      </>
     } />
   );
 }

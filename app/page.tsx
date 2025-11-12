@@ -1,5 +1,7 @@
 "use client"
 
+import { useState } from "react";
+
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes";
 
@@ -17,8 +19,9 @@ import Project from "@/components/main/project";
 export default function Home() {
   const { setTheme } = useTheme()
   const { theme } = useTheme()
+  const [tabValue, setTabValue] = useState<"work" | "pastime">("work");
   return (
-    <div>
+    <>
       <header className="flex flex-col items-center bg-gray-500 dark:bg-gray-900">
         <div className="w-full sm:w-1/2">
           <div className="flex justify-between items-center py-2">
@@ -51,7 +54,7 @@ export default function Home() {
               <span className="sr-only">Toggle theme</span>
             </Button>
           </div>
-          <Tabs defaultValue="work" className="w-[400px]">
+          <Tabs value={tabValue} onValueChange={(value) => setTabValue(value as "work" | "pastime")} defaultValue="work" className="w-[400px]">
             <TabsList className="bg-gray-500 dark:bg-gray-900">
               <TabsTrigger value="work" className="data-[state=active]:bg-gray-400 dark:data-[state=active]:bg-gray-700">技術者として</TabsTrigger>
               <TabsTrigger value="pastime" className="data-[state=active]:bg-gray-400 dark:data-[state=active]:bg-gray-700">人として</TabsTrigger>
@@ -60,15 +63,32 @@ export default function Home() {
         </div>
       </header>
       <main className="flex flex-col items-center space-y-4 p-4 bg-gray-300 dark:bg-gray-800">
-        <AboutMe />
-        <Project />
-        <Certification />
+        {tabValue === "work" ? (
+          <>
+            <AboutMe variant={tabValue} />
+            <Project />
+            <Certification />
+          </>
+        ) : (
+          <>
+            <AboutMe variant={tabValue} />
+            <div>
+              <p>工事中...</p>
+              <Image
+                src="/underConst.png"
+                alt="Under Construction"
+                width={400}
+                height={400}
+              />
+            </div>
+          </>          
+        )}
       </main>
       <footer className="bg-gray-500 dark:bg-gray-900">
-        <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
+        <p className="text-center text-sm text-zinc-900 dark:text-zinc-400">
           © 2024 shu-kitamura
         </p>
       </footer>
-    </div>
+    </>
   );
 }
