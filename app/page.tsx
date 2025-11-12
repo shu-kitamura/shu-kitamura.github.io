@@ -61,7 +61,6 @@ export default function Home() {
         </div>
       </header>
       <main className="flex flex-col items-center bg-gray-300 dark:bg-gray-800">
-        <Hero />
         <AboutMe />
         <Project />
         <Certification />
