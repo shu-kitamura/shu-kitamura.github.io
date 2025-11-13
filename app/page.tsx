@@ -20,7 +20,7 @@ import Project from "@/components/main/project";
 export default function Home() {
   const { setTheme } = useTheme()
   const { theme } = useTheme()
-  const [tabValue, setTabValue] = useState<"work" | "pastime">("work");
+  const [tabValue, setTabValue] = useState<"tech" | "life">("tech");
   return (
     <>
       <header className="flex flex-col items-center bg-gray-500 dark:bg-gray-900">
@@ -55,16 +55,16 @@ export default function Home() {
               <span className="sr-only">Toggle theme</span>
             </Button>
           </div>
-          <Tabs value={tabValue} onValueChange={(value) => setTabValue(value as "work" | "pastime")} defaultValue="work" className="w-[400px]">
+          <Tabs value={tabValue} onValueChange={(value) => setTabValue(value as "tech" | "life")} defaultValue="tech" className="w-[400px]">
             <TabsList className="bg-gray-500 dark:bg-gray-900">
-              <TabsTrigger value="work" className="data-[state=active]:bg-gray-400 dark:data-[state=active]:bg-gray-700">技術者として</TabsTrigger>
-              <TabsTrigger value="pastime" className="data-[state=active]:bg-gray-400 dark:data-[state=active]:bg-gray-700">人として</TabsTrigger>
+              <TabsTrigger value="tech" className="data-[state=active]:bg-gray-400 dark:data-[state=active]:bg-gray-700">tech</TabsTrigger>
+              <TabsTrigger value="life" className="data-[state=active]:bg-gray-400 dark:data-[state=active]:bg-gray-700">life</TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
       </header>
       <main className="flex flex-col items-center space-y-4 p-4 bg-gray-300 dark:bg-gray-800">
-        {tabValue === "work" ? (
+        {tabValue === "tech" ? (
           <>
             <AboutMe variant={tabValue} />
             <Project />

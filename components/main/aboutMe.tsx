@@ -11,18 +11,18 @@ import Title from "@/components/main/utils/title";
 import Section from "@/components/main/utils/section";
 
 type AboutMeProps = {
-  variant: "work" | "pastime";
+  variant: "tech" | "life";
 }
 
 export default function AboutMe({ variant }: AboutMeProps) {
   const texts = {
-    "work": [
+    "tech": [
       "大阪出身、札幌在住。",
       "SIer 企業でサーバ開発・保守の業務をしています。",
       "CLIツールとバックエンドの開発が好きです。Rust, Pythonを使っています。",
       "最近はWebアプリ開発(Next.js, FastAPI)にも興味があります。",
     ],
-    "pastime": [
+    "life": [
       "大阪出身、札幌在住。",
       "お笑いが好きです。実家に帰ったときに見に行きます。",
       "よく行っていた祇園花月が閉館して悲しいです。",
