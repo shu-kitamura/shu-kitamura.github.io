@@ -14,6 +14,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import AboutMe from "@/components/main/aboutMe"
 import Activity from "@/components/main/activity";
 import Certification from "@/components/main/certification";
+import Creative from "@/components/main/creative";
 import Project from "@/components/main/project";
 
 
@@ -74,6 +75,7 @@ export default function Home() {
           <>
             <AboutMe variant={tabValue} />
             <Activity />
+            <Creative />
             <div>
               <p>工事中...</p>
               <Image
