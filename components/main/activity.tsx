@@ -1,12 +1,6 @@
 import Image from "next/image";
 
 import {
-  Item,
-  ItemContent,
-  ItemDescription,
-  ItemTitle,
-} from "@/components/ui/item"
-import {
   Carousel,
   CarouselContent,
   CarouselItem,

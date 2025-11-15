@@ -1,5 +1,3 @@
-import { JSX } from "react";
-
 export default function Title({ title }: { title: string }) {
   return (
     <div className="flex items-start p-2">
