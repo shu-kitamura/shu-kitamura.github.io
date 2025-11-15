@@ -56,32 +56,30 @@ export default function Activity() {
             description="大学時代は自転車旅行をやっていた。全都道府県に行ったことがある。"
             contents={
               <div className="flex justify-center">
-                <Carousel className="w-full max-w-xs">
+                <Carousel className="w-full">
                   <CarouselContent>
                     {myBikes.map((bike, index) => (
-                      <CarouselItem key={index}>
-                        <div className="p-1">
-                          <Card className="bg-gray-200 dark:bg-gray-800">
-                            <CardHeader>
-                              <CardTitle>{bike.generation}</CardTitle>
-                              <CardDescription>{bike.description}</CardDescription>
-                            </CardHeader>
-                            <CardContent className="flex flex-col items-start">
-                              <Image
-                                src={bike.image}
-                                alt={bike.generation}
-                                width={300}
-                                height={300}
-                              />
-                              <span className="font-semibold mb-2">主な旅行先:</span>
-                              <ul className="list-disc pl-5">
-                                {bike.trip.map((place, idx) => (
-                                  <li key={idx}>{place}</li>
-                                ))}
-                              </ul>
-                            </CardContent>
-                          </Card>
-                        </div>
+                      <CarouselItem key={index} className="max-w-xs 2xl:basis-1/3">
+                        <Card className="bg-gray-200 dark:bg-gray-800">
+                          <CardHeader>
+                            <CardTitle>{bike.generation}</CardTitle>
+                            <CardDescription>{bike.description}</CardDescription>
+                          </CardHeader>
+                          <CardContent className="flex flex-col">
+                            <Image
+                              src={bike.image}
+                              alt={bike.generation}
+                              width={300}
+                              height={300}
+                            />
+                            <span className="font-semibold mb-2">主な旅行先:</span>
+                            <ul className="list-disc pl-5">
+                              {bike.trip.map((place, idx) => (
+                                <li key={idx}>{place}</li>
+                              ))}
+                            </ul>
+                          </CardContent>
+                        </Card>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
