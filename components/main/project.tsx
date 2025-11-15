@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import Title from "@/components/main/utils/title";
 import Section from "@/components/main/utils/section";
-import ProjectCard from "@/components/main/utils/projectCard";
+import TopicCard from "@/components/main/utils/topicCard";
 
 export default function Project() {
   return (
@@ -13,7 +13,7 @@ export default function Project() {
           <p>
             個人開発・貢献したOSSプロジェクト
           </p>
-          <ProjectCard
+          <TopicCard
             title="Sniffnet"
             badgeText="OSS"
             badgeColor="bg-blue-600"
@@ -31,7 +31,7 @@ export default function Project() {
             }
           />
 
-          <ProjectCard
+          <TopicCard
             title="etherparse"
             badgeText="OSS"
             badgeColor="bg-blue-600"
@@ -46,7 +46,7 @@ export default function Project() {
             }
           />
 
-          <ProjectCard
+          <TopicCard
             title="regex"
             badgeText="個人開発"
             badgeColor="bg-orange-600"
@@ -60,7 +60,7 @@ export default function Project() {
             }
           />
 
-          <ProjectCard
+          <TopicCard
             title="このサイト"
             badgeText="個人開発"
             badgeColor="bg-orange-600"

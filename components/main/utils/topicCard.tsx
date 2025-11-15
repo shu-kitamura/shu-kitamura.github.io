@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { Badge } from "@/components/ui/badge";
 import { Label } from "@/components/ui/label";
 
@@ -14,7 +12,7 @@ import {
 import ServiceIcon from "@/components/main/utils/serviceIcon";
 import { JSX } from "react";
 
-type ProjectCardProps = {
+type TopicCardProps = {
   title: string;
   badgeText?: string;
   badgeColor?: string;
@@ -23,7 +21,7 @@ type ProjectCardProps = {
   contents: JSX.Element;
 }
 
-export default function ProjectCard( { title, badgeText, badgeColor, description, repoLink, contents }: ProjectCardProps ) {
+export default function TopicCard( { title, badgeText, badgeColor, description, repoLink, contents }: TopicCardProps ) {
   return (
     <Card className="w-full gap-2 border-2 border-black/30 dark:border-white/30 bg-gray-100 dark:bg-gray-600 py-1">
       <CardHeader>

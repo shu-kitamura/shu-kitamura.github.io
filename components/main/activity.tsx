@@ -17,7 +17,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 import Title from "@/components/main/utils/title";
 import Section from "@/components/main/utils/section";
-import ProjectCard from "@/components/main/utils/projectCard";
+import TopicCard from "@/components/main/utils/topicCard";
 
 export default function Activity() {
   const myBikes = [
@@ -57,7 +57,7 @@ export default function Activity() {
             やってた・やってること
           </p>
 
-          <ProjectCard
+          <TopicCard
             title="自転車旅行"
             description="大学時代は自転車旅行をやっていた。全都道府県に行ったことがある。"
             contents={
@@ -98,7 +98,7 @@ export default function Activity() {
             }
           />
 
-          <ProjectCard
+          <TopicCard
             title="テニス"
             description="中高でソフトテニスをやっていた。社会人になってから硬式テニスを始めた。"
             contents={
@@ -117,7 +117,7 @@ export default function Activity() {
             }
           />
 
-          <ProjectCard
+          <TopicCard
             title="フットサル"
             description="2024年から始めた。週に1回やっている。全然上手くないが楽しい。"
             contents={
