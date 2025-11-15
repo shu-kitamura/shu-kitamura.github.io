@@ -1,14 +1,32 @@
+import Link from "next/link";
+import Image from "next/image";
+
 import {
-  Item,
-  ItemContent,
-  ItemDescription,
-  ItemTitle,
-} from "@/components/ui/item"
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import Title from "@/components/main/utils/title";
 import Section from "@/components/main/utils/section";
+import TopicCard from "@/components/main/utils/topicCard";
 
 export default function Creative() {
+  const myPunIllustrations = [
+    { 
+      title: "いかさま",
+      image: "/illustrations/ikasama.jpg",
+    }, {
+      title: "ウマ・ワトソン",
+      image: "/illustrations/umawatson.jpg",
+    }, {
+      title: "モーモー太郎",
+      image: "/illustrations/momotaro.jpg",
+    }
+  ]
   return (
     <Section sectionId="creative-section" contents={
       <>
@@ -17,27 +35,51 @@ export default function Creative() {
           <p>
             作ったモノ
           </p>
-          <Item variant="outline" className="w-full border-2 border-black/30 dark:border-white/30">
-            <ItemContent>
-              <ItemTitle>
-                ネタスライド
-              </ItemTitle>
-              <ItemDescription>
-                ネタスライドを作って、LTで発表しています。
-                一応、技術絡めてます。
-              </ItemDescription>
-            </ItemContent>
-          </Item>
-          <Item variant="outline" className="w-full border-2 border-black/30 dark:border-white/30">
-            <ItemContent>
-              <ItemTitle>
-                ダジャレ絵
-              </ItemTitle>
-              <ItemDescription>
-                ダジャレを絵にしています。
-              </ItemDescription>
-            </ItemContent>
-          </Item>
+          <TopicCard
+            title="ネタスライド"
+            description="時々ネタスライドを作っています。LTで発表しています。一応、技術を絡めています。"
+            contents={
+              <>
+                <span>代表作</span>
+                <ul className="list-disc pl-5">
+                  <li>ギャルのパンティおくれ！（<Link href="https://speakerdeck.com/shu_kita/giyarunopanteiokure" className="text-blue-700 dark:text-blue-400 underline">資料</Link>）</li>
+                  <li>Azure AI Content Safety でフワちゃんを救う（<Link href="https://speakerdeck.com/shu_kita/jie-shi-ban-henobu-shi-qie-natou-gao-wofang-gu" className="text-blue-700 dark:text-blue-400 underline">資料</Link>）</li>
+                </ul>
+                </>
+            }
+          />
+
+          <TopicCard
+            title="ダジャレ絵"
+            description="ダジャレを絵にしています"
+            contents={
+              <div className="flex justify-center">
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {myPunIllustrations.map((illustration, index) => (
+                      <CarouselItem key={index} className="max-w-xs 2xl:basis-1/3">
+                        <Card className="bg-gray-200 dark:bg-gray-800">
+                          <CardHeader>
+                            <CardTitle>{illustration.title}</CardTitle>
+                          </CardHeader>
+                          <CardContent className="flex flex-col">
+                            <Image
+                              src={illustration.image}
+                              alt={illustration.title}
+                              width={300}
+                              height={300}
+                            />
+                          </CardContent>
+                        </Card>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+              </div>
+            }
+          />
         </div>
       </>
     } />

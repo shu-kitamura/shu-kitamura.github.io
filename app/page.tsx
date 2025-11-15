@@ -76,15 +76,6 @@ export default function Home() {
             <AboutMe variant={tabValue} />
             <Activity />
             <Creative />
-            <div>
-              <p>工事中...</p>
-              <Image
-                src="/underConst.png"
-                alt="Under Construction"
-                width={400}
-                height={400}
-              />
-            </div>
           </>          
         )}
       </main>
