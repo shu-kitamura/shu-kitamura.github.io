@@ -16,10 +16,10 @@ import { JSX } from "react";
 
 type ProjectCardProps = {
   title: string;
-  badgeText: string;
-  badgeColor: string;
+  badgeText?: string;
+  badgeColor?: string;
   description: string;
-  repoLink: string;
+  repoLink?: string;
   contents: JSX.Element;
 }
 
@@ -27,17 +27,21 @@ export default function ProjectCard( { title, badgeText, badgeColor, description
   return (
     <Card className="w-full gap-2 border-2 border-black/30 dark:border-white/30 bg-gray-100 dark:bg-gray-600 py-1">
       <CardHeader>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 h-10">
           <CardTitle>{title}</CardTitle>
-          <Label>
-            <Badge className={`h-4 ${badgeColor} text-white`}>{badgeText}</Badge>
-          </Label>
-          <ServiceIcon
-            href={repoLink}
-            imagePathLight="/logos/github/github-mark-light.svg"
-            imagePathDark="/logos/github/github-mark-dark.svg"
-            altText="GitHub icon"
-          />
+          {badgeText && badgeColor && (
+            <Label>
+              <Badge className={`h-4 ${badgeColor} text-white`}>{badgeText}</Badge>
+            </Label>
+          )}
+          {repoLink && (
+            <ServiceIcon
+              href={repoLink}
+              imagePathLight="/logos/github/github-mark-light.svg"
+              imagePathDark="/logos/github/github-mark-dark.svg"
+              altText="GitHub icon"
+            />
+          )}
         </div>
         <CardDescription className="text-gray-700 dark:text-gray-200">{description}</CardDescription>
       </CardHeader>

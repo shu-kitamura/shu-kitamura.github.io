@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 
 import {
   Item,
@@ -6,11 +6,48 @@ import {
   ItemDescription,
   ItemTitle,
 } from "@/components/ui/item"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 import Title from "@/components/main/utils/title";
 import Section from "@/components/main/utils/section";
+import ProjectCard from "@/components/main/utils/projectCard";
 
 export default function Activity() {
+  const myBikes = [
+    { 
+      generation: "初代自転車",
+      description: "Giantのクロスバイク",
+      image: "/bikes/giant.jpg",
+      trip: [
+        "四国一周",
+        "大阪 - 東海 - 関東",
+        "大阪 - 中国 - 九州一周・沖縄（フェリー）",
+      ]
+    }, {
+      generation: "二代目自転車",
+      description: "Arayaのランドナー",
+      image: "/bikes/araya.jpg",
+      trip: [
+        "北陸 - 東北",
+        "北海道（苫小牧 - 函館のみ）",
+      ]
+    }, {
+      generation: "三代目自転車",
+      description: "Fujiのグラベルロード。今も使っている",
+      image: "/bikes/fuji.jpg",
+      trip: [
+        "三島 - 山梨 - 長野",
+        "大阪 - 敦賀 - (フェリー) - 苫小牧 - 札幌",
+      ]
+    }
+  ]
   return (
     <Section sectionId="activity-section" contents={
       <>
@@ -19,38 +56,77 @@ export default function Activity() {
           <p>
             やってた・やってること
           </p>
-          <Item variant="outline" className="w-full border-2 border-black/30 dark:border-white/30">
-            <ItemContent>
-              <ItemTitle>
-                テニス
-              </ItemTitle>
-              <ItemDescription>
-                中学・高校でソフトテニスをやっていた。ポジションは前衛。スマッシュが得意だった。
-                就職してから硬式テニスを始めた。バックハンドが得意。
-              </ItemDescription>
-            </ItemContent>
-          </Item>
-          <Item variant="outline" className="w-full border-2 border-black/30 dark:border-white/30">
-            <ItemContent>
-              <ItemTitle>
-                フットサル
-              </ItemTitle>
-              <ItemDescription>
-                2024年から始めた。週に1回やっている。
-                全然上手くないが楽しい。
-              </ItemDescription>
-            </ItemContent>
-          </Item>
-          <Item variant="outline" className="w-full border-2 border-black/30 dark:border-white/30">
-            <ItemContent>
-              <ItemTitle>
-                自転車旅行
-              </ItemTitle>
-              <ItemDescription>
-                大学時代はこれをやっていた。全都道府県に行ったことがある。
-              </ItemDescription>
-            </ItemContent>
-          </Item>
+
+          <ProjectCard
+            title="自転車旅行"
+            description="大学時代は自転車旅行をやっていた。全都道府県に行ったことがある。"
+            contents={
+              <div className="flex justify-center">
+                <Carousel className="w-full max-w-xs">
+                  <CarouselContent>
+                    {myBikes.map((bike, index) => (
+                      <CarouselItem key={index}>
+                        <div className="p-1">
+                          <Card className="bg-gray-200 dark:bg-gray-800">
+                            <CardHeader>
+                              <CardTitle>{bike.generation}</CardTitle>
+                              <CardDescription>{bike.description}</CardDescription>
+                            </CardHeader>
+                            <CardContent className="flex flex-col items-start">
+                              <Image
+                                src={bike.image}
+                                alt={bike.generation}
+                                width={300}
+                                height={300}
+                              />
+                              <span className="font-semibold mb-2">主な旅行先:</span>
+                              <ul className="list-disc pl-5">
+                                {bike.trip.map((place, idx) => (
+                                  <li key={idx}>{place}</li>
+                                ))}
+                              </ul>
+                            </CardContent>
+                          </Card>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+              </div>
+            }
+          />
+
+          <ProjectCard
+            title="テニス"
+            description="中高でソフトテニスをやっていた。社会人になってから硬式テニスを始めた。"
+            contents={
+              <ul className="list-disc pl-5">
+                <li>ソフトテニス</li>
+                  <ul className="list-disc pl-5">
+                    <li>ポジションは前衛。スマッシュが得意だった</li>
+                    <li>実は近畿大会に出たことがある（唯一の自慢）</li>
+                  </ul>
+                <li>硬式テニス</li>
+                  <ul className="list-disc pl-5">
+                    <li>週1でやっている。スクールで中級</li>
+                    <li>バックハンドが得意</li>
+                  </ul>
+              </ul>
+            }
+          />
+
+          <ProjectCard
+            title="フットサル"
+            description="2024年から始めた。週に1回やっている。全然上手くないが楽しい。"
+            contents={
+              <>
+                <p>観戦は日本代表ぐらいしかしません。</p>
+                <p>好きな選手はロナウジーニョとスアレスです。</p>
+              </>
+            }
+          />
         </div>
       </>
     } />

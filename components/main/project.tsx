@@ -1,23 +1,5 @@
 import Link from "next/link";
 
-import {
-  Item,
-  ItemContent,
-  ItemDescription,
-  ItemTitle,
-} from "@/components/ui/item"
-import { Badge } from "@/components/ui/badge";
-import { Label } from "@/components/ui/label";
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-
-
 import Title from "@/components/main/utils/title";
 import Section from "@/components/main/utils/section";
 import ProjectCard from "@/components/main/utils/projectCard";
