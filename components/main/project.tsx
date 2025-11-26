@@ -57,7 +57,7 @@ export default function Project() {
             badgeText="個人開発"
             badgeColor="bg-orange-600"
             description="リアルタイムで結果が反映される投票Webアプリ"
-            repoLink="https://github.com/shu-kitamura/regular-expression"
+            repoLink="https://github.com/shu-kitamura/tohyo-communication"
             contents={
               <>
               <p>
