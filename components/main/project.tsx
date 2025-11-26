@@ -27,22 +27,44 @@ export default function Project() {
                 <li>
                   ver 1.4の日本語翻訳(<Link href="https://github.com/GyulyVGC/sniffnet/pull/849" className="text-blue-700 dark:text-blue-400 underline">#849</Link>)
                 </li>
+                <li>
+                  依存ライブラリ（etherparse）にLinux_SLLヘッダの解析機能を実装(<Link href="https://github.com/JulianSchmid/etherparse/pull/125" className="text-blue-700 dark:text-blue-400 underline">#125</Link>)
+                </li>
               </ul>
             }
           />
 
           <TopicCard
-            title="etherparse"
+            title="fjall"
             badgeText="OSS"
             badgeColor="bg-blue-600"
-            description="Sniffnetが依存するパケット解析ライブラリ"
-            repoLink="https://github.com/JulianSchmid/etherparse"
+            description="LSMツリーベースのKey Value Store"
+            repoLink="https://github.com/fjall-rs/fjall"
             contents={
               <ul className="list-disc pl-5">
                 <li>
-                  Linux_SLLヘッダの解析機能を実装(<Link href="https://github.com/JulianSchmid/etherparse/pull/125" className="text-blue-700 dark:text-blue-400 underline">#125</Link>)
+                  Compaction 実行回数を数える機能を実装(<Link href="https://github.com/fjall-rs/fjall/pull/159" className="text-blue-700 dark:text-blue-400 underline">#159</Link>)
+                </li>
+                <li>
+                  パーティション毎の Flush 実行回数を数える機能を実装(<Link href="https://github.com/fjall-rs/fjall/pull/161" className="text-blue-700 dark:text-blue-400 underline">#161</Link>)
                 </li>
               </ul>
+            }
+          />
+
+          <TopicCard
+            title="TOHYO通信 ~Vote Communication~"
+            badgeText="個人開発"
+            badgeColor="bg-orange-600"
+            description="リアルタイムで結果が反映される投票Webアプリ"
+            repoLink="https://github.com/shu-kitamura/regular-expression"
+            contents={
+              <>
+              <p>
+                <Link href="https://vote.shu-kita.net/" className="text-blue-700 dark:text-blue-400 underline">https://vote.shu-kita.net/</Link>で公開しています。
+              </p>
+              <p>Next.jsで開発し、Cloudflare Workersでホスティングしています。</p>
+              </>
             }
           />
 
@@ -64,7 +86,7 @@ export default function Project() {
             title="このサイト"
             badgeText="個人開発"
             badgeColor="bg-orange-600"
-            description="以下の技術で作成・ホスティングしています。"
+            description="以下の技術で構成されています"
             repoLink="https://github.com/shu-kitamura/shu-kitamura.github.io"
             contents={
               <ul className="list-disc pl-5">
