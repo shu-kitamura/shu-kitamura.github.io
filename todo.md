@@ -9,8 +9,6 @@
 
 ## Codex 記載
 
-- next.config.ts / .github/workflows/nextjs.yml: GitHub Pages で ./out を配信する前提なのに output: "export" や images.unoptimized の指定がなく、next build しても out/ が出ない構成。静的エクスポートが通るように設定とワークフローを見直す。
-- .github/workflows/nextjs.yml: CI がビルドのみで lint/test のゲートが無い。最低でも npm run lint を追加し、将来的にテストも入れたい。
 - app/page.tsx: TabsContent を使わず値だけ変えているので「タブ」として ARIA 的に成立していない。表示内容も Tabs 配下に置くか、単なるトグル UI に置き換える。
 - app/page.tsx: タブコンテナが w-[400px] 固定でモバイルではみ出す。レスポンシブに幅を調整する。
 - app/page.tsx: useTheme を二重に呼びつつマウントチェック無しでトグルを描画しており、初期描画でチラつき/誤判定の恐れ。1 回の呼び出しにまとめて mounted ガードを入れる。
@@ -28,9 +26,14 @@
 - レイアウト幅: Section が sm:w-1/2 固定で大画面でも横幅が使えず余白だらけ。max-width と左右マージンを再設計する。
 - テスト無し: ユニット/E2E/Storybook などが一切無い。最低限の UI スナップショットか e2e を導入して回帰検知したい。
 
+## 対応済み
+
+- next.config.ts: `output: "export"` と `images.unoptimized: true` を設定し、静的エクスポートで out/ を出せるようにした。
+- .github/workflows/nextjs.yml: ビルド前に `npm run lint` を追加してLint落ちを検知できるようにした。
+
 ## 改善方針  
 
-- まずデプロイ土台を直す: `next.config.ts`に`output: "export"`と`images.unoptimized: true`を入れ、`nextjs.yml`を`npm run lint && next build`で`out/`を吐く形にする。
+- デプロイ土台は完了: `output: "export"`/`images.unoptimized: true`/CIのlint追加済み。以後は動作確認のみ。
 - タブ/テーマを整理: TabsContent配下にコンテンツを移すかトグルに置換し、`useTheme`は1回＋mountedガード。タブ幅は`w-full max-w-sm`などでモバイル対応。
 - スタイルとレイアウトを再設計: `bg-gray-*`直書きをトークン化し、セクション幅を`max-w-4xl`前後＋`px-4`などで中央寄せ。カード/セクションの背景もトークンに寄せる。
 - マークアップ修正: Activityの`ul`ネスト修正、`Label`誤用を`span/div`へ、`map`キーは安定キーに変更。外部リンクは`target="_blank" rel="noreferrer"`。
