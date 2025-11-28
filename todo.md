@@ -27,3 +27,14 @@
 - types/certification.d.ts: JSX.Element を import なしで参照しており、skipLibCheck を外すと落ちる懸念。import 追加 or .ts 化する。
 - レイアウト幅: Section が sm:w-1/2 固定で大画面でも横幅が使えず余白だらけ。max-width と左右マージンを再設計する。
 - テスト無し: ユニット/E2E/Storybook などが一切無い。最低限の UI スナップショットか e2e を導入して回帰検知したい。
+
+## 改善方針  
+
+- まずデプロイ土台を直す: `next.config.ts`に`output: "export"`と`images.unoptimized: true`を入れ、`nextjs.yml`を`npm run lint && next build`で`out/`を吐く形にする。
+- タブ/テーマを整理: TabsContent配下にコンテンツを移すかトグルに置換し、`useTheme`は1回＋mountedガード。タブ幅は`w-full max-w-sm`などでモバイル対応。
+- スタイルとレイアウトを再設計: `bg-gray-*`直書きをトークン化し、セクション幅を`max-w-4xl`前後＋`px-4`などで中央寄せ。カード/セクションの背景もトークンに寄せる。
+- マークアップ修正: Activityの`ul`ネスト修正、`Label`誤用を`span/div`へ、`map`キーは安定キーに変更。外部リンクは`target="_blank" rel="noreferrer"`。
+- 画像とパフォーマンス: `next/image`に`sizes`/必要なら`priority`を設定し、静的書き出し運用なら`unoptimized`を活用。
+- SEO/公開準備: metadataにOG/Twitterカードを追加し、`sitemap.ts`と`robots.txt`を用意。タイトル/descriptionも適宜見直す。
+- 依存・型の健全化: 未使用Radix/animate依存を削除し、`types/certification.d.ts`に`JSX`をimportまたは`.ts`化。`skipLibCheck`を前提にしない。
+- 品質ゲート: CIにlintを常時入れ、余裕があればPlaywright/Cypressなどで1本でもe2eを追加して回帰検知の足場を作る。
