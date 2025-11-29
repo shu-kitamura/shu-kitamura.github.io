@@ -41,3 +41,15 @@
 - SEO/公開準備: metadataにOG/Twitterカードを追加し、`sitemap.ts`と`robots.txt`を用意。タイトル/descriptionも適宜見直す。
 - 依存・型の健全化: 未使用Radix/animate依存を削除し、`types/certification.d.ts`に`JSX`をimportまたは`.ts`化。`skipLibCheck`を前提にしない。
 - 品質ゲート: CIにlintを常時入れ、余裕があればPlaywright/Cypressなどで1本でもe2eを追加して回帰検知の足場を作る。
+- デザイン改善: カラーパレット/タイポ/余白・カード角丸などの共通ルールを整理し、トークンを軸に一貫した見た目に寄せる。トップのヒーローやセクション見出しにも強弱を付け、統一感のあるビジュアルを目指す。
+
+## 優先度（デザイン大変動を前提）
+
+1. タブ/テーマのアクセシビリティと初期描画の健全化（app/page.tsx）: TabsContent 配置、useTheme 一回＋mounted ガード、タブ幅をレスポンシブ化。
+2. マークアップ修正と安全策（activity の ul/li、Label→span/div、安定 key、外部リンク target/rel）: デザインと独立した負債を先に解消。
+3. 情報設計とトークン土台の確立: カラーパレット/タイポ/余白のトークンセット、レイアウトの max-width/余白指針を先に決める（個別の色調整はデザイン確定後）。
+4. 画像最適化の枠組み: `next/image` に `sizes` など構造的変更のみ先行。`priority`/個別サイズは新デザイン確定後に再設定。
+5. SEO/公開準備: metadataBase、OG/Twitter、sitemap/robots を追加。OG画像は新デザイン確定後に差し替える前提。
+6. 依存・型の健全化: 未使用 Radix/animate 等の削除、`types/certification.d.ts` の修正（`.ts`化 or `JSX` import）。デザインと並行で進行。
+7. デザイン実装フェーズ: トークンを活かし、色/タイポ/余白、セクション見出し・ヒーローの強弱など大きな見た目変更をまとめて実装。
+8. 品質ゲート: 新UIが固まったタイミングで e2e/Storybook を追加し、リグレッション検知の基盤にする。
