@@ -24,7 +24,7 @@ export default function Home() {
   const [tabValue, setTabValue] = useState<"tech" | "life">("tech");
   return (
     <>
-      <header className="flex flex-col items-center bg-gray-500 dark:bg-gray-900">
+      <header className="flex flex-col items-center">
         <div className="w-full sm:w-1/2">
           <div className="flex justify-between items-center py-2">
             <div className="flex items-center space-x-2">
@@ -64,7 +64,7 @@ export default function Home() {
           </Tabs>
         </div>
       </header>
-      <main className="flex flex-col items-center space-y-4 p-4 bg-gray-300 dark:bg-gray-800">
+      <main className="flex flex-col items-center space-y-4 p-4">
         <Hero />
         {tabValue === "tech" ? (
           <>
@@ -80,7 +80,7 @@ export default function Home() {
           </>          
         )}
       </main>
-      <footer className="bg-gray-500 dark:bg-gray-900">
+      <footer>
         <p className="text-center text-sm text-zinc-900 dark:text-zinc-400">
           © 2024 shu-kitamura
         </p>

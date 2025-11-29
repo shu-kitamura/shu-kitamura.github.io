@@ -26,6 +26,9 @@ export default function Hero() {
         <h1 className="text-4xl sm:text-5xl font-extrabold">
           shu-kitamura
         </h1>
+        <p className="text-md">
+            Software Developer in Sapporo, Japan
+        </p>
         <div className="flex space-x-2 sm:space-x-5">
           <ServiceIcon
             href="https://github.com/shu-kitamura"
