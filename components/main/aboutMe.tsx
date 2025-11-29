@@ -28,18 +28,21 @@ export default function AboutMe({ variant }: AboutMeProps) {
           <Title title="About Me" />
           <ServiceIcon
             href="https://github.com/shu-kitamura"
+            size={5}
             imagePathLight="/logos/github/github-mark-light.svg"
             imagePathDark="/logos/github/github-mark-dark.svg"
             altText="GitHub icon"
           />
           <ServiceIcon
             href="https://x.com/prog_shu"
+            size={5}
             imagePathLight="/logos/x/x-mark-light.svg"
             imagePathDark="/logos/x/x-mark-dark.svg"
             altText="X icon"
           />
           <ServiceIcon
             href="https://zenn.dev/shu_kitamura"
+            size={5}
             imagePathLight="/logos/zenn/zenn-mark.svg"
             imagePathDark="/logos/zenn/zenn-mark.svg"
             altText="Zenn icon"

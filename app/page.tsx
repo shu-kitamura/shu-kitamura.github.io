@@ -16,7 +16,7 @@ import Activity from "@/components/main/activity";
 import Certification from "@/components/main/certification";
 import Creative from "@/components/main/creative";
 import Project from "@/components/main/project";
-
+import Hero from "@/components/main/hero";
 
 export default function Home() {
   const { setTheme } = useTheme()
@@ -65,6 +65,7 @@ export default function Home() {
         </div>
       </header>
       <main className="flex flex-col items-center space-y-4 p-4 bg-gray-300 dark:bg-gray-800">
+        <Hero />
         {tabValue === "tech" ? (
           <>
             <AboutMe variant={tabValue} />
