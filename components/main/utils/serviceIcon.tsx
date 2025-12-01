@@ -9,7 +9,7 @@ import {
 
 type ServiceIconProps = {
   href: string;
-  size: 5 | 10;
+  size: "5" | "10";
   imagePathLight: string;
   imagePathDark: string;
   altText: string;
@@ -19,7 +19,7 @@ export default function ServiceIcon({ href, size, imagePathLight, imagePathDark,
   return (
     <Button variant="ghost" size="icon" asChild>
       <Link href={href}>
-        <Avatar className={`w-${size} h-${size} rounded-none scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100`}>
+        <Avatar className={`w-${size} h-${size} rounded-none scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100 hover:bg-red-500/10`}>
           <AvatarImage src={imagePathLight} alt={altText} />
           <AvatarFallback>{altText}</AvatarFallback>
         </Avatar>

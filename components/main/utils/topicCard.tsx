@@ -35,7 +35,7 @@ export default function TopicCard( { title, badgeText, badgeColor, description, 
           {repoLink && (
             <ServiceIcon
               href={repoLink}
-              size={5}
+              size="5"
               imagePathLight="/logos/github/github-mark-light.svg"
               imagePathDark="/logos/github/github-mark-dark.svg"
               altText="GitHub icon"
