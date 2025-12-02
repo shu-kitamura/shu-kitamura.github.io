@@ -11,12 +11,13 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-import AboutMe from "@/components/main/aboutMe"
-import Activity from "@/components/main/activity";
-import Certification from "@/components/main/certification";
-import Creative from "@/components/main/creative";
-import Project from "@/components/main/project";
-import Hero from "@/components/main/hero";
+import AboutMe from "@/app/components/aboutMe"
+import Activity from "@/app/components/activity";
+import Certification from "@/app/components/certification";
+import Creative from "@/app/components/creative";
+import Project from "@/app/components/project";
+import Hero from "@/app/components/hero";
+import Test from "@/app/components/test";
 
 export default function Home() {
   const { setTheme } = useTheme()
@@ -66,6 +67,7 @@ export default function Home() {
       </header>
       <main className="flex flex-col items-center space-y-4 p-4">
         <Hero />
+        <Test />
         {tabValue === "tech" ? (
           <>
             <AboutMe variant={tabValue} />

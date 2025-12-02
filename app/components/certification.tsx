@@ -6,8 +6,8 @@ import {
   ItemTitle,
 } from "@/components/ui/item"
 
-import Title from "@/components/main/utils/title";
-import Section from "@/components/main/utils/section";
+import Title from "@/app/components/utils/title";
+import Section from "@/app/components/utils/section";
 
 import { certifications } from "@/data/certifications";
 

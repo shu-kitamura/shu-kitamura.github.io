@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import ServiceIcon from "@/components/main/utils/serviceIcon";
+import ServiceIcon from "@/app/components/utils/serviceIcon";
 import { JSX } from "react";
 
 type TopicCardProps = {

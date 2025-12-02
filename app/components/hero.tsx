@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Label } from "@/components/ui/label"
-import ServiceIcon from "@/components/main/utils/serviceIcon";
+import ServiceIcon from "@/app/components/utils/serviceIcon";
 
 export default function Hero() {
   return (

@@ -1,6 +1,6 @@
-import Title from "@/components/main/utils/title";
-import Section from "@/components/main/utils/section";
-import ServiceIcon from "@/components/main/utils/serviceIcon";
+import Title from "@/app/components/utils/title";
+import Section from "@/app/components/utils/section";
+import ServiceIcon from "@/app/components/utils/serviceIcon";
 
 type AboutMeProps = {
   variant: "tech" | "life";

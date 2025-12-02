@@ -10,9 +10,9 @@ import {
 } from "@/components/ui/carousel"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-import Title from "@/components/main/utils/title";
-import Section from "@/components/main/utils/section";
-import TopicCard from "@/components/main/utils/topicCard";
+import Title from "@/app/components/utils/title";
+import Section from "@/app/components/utils/section";
+import TopicCard from "@/app/components/utils/topicCard";
 
 export default function Creative() {
   const myPunIllustrations = [
