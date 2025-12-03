@@ -10,6 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 
+import Link from "next/link";
 
 export default function Test() {
   return (
@@ -17,14 +18,16 @@ export default function Test() {
       <>
           <Title title="Test Section" />
           <Carousel className="w-full">
-            <CarouselContent className="flex space-x-5">
+            <CarouselContent className="flex space-x-5 p-5">
               <CarouselItem className="basis-1/2">
-              <SectionCard
-                sectionCardId="sniffnet-card"
-                title="Sniffnet"
-                description="Rust製のネットワークモニタリングツール。ARPパケットの監視機能を実装。画面の日本語訳も一部担当。"
-                imageSrc="/sniffnet.svg"
-              />
+                <Link href="https://github.com/GyulyVGC/sniffnet">
+                  <SectionCard
+                    sectionCardId="sniffnet-card"
+                    title="Sniffnet"
+                    description="Rust製のネットワークモニタリングツール。ARPパケットの監視機能を実装。画面の日本語訳も一部担当。"
+                    imageSrc="/sniffnet.svg"
+                  />
+                </Link>
               </CarouselItem>
               <CarouselItem className="basis-1/2">
               <SectionCard
@@ -37,10 +40,20 @@ export default function Test() {
               <CarouselItem className="basis-1/2">
               <SectionCard
                 sectionCardId="tohyo-communication-card"
-                title="TOHYO通信 ~Vote Communication~"
+                title="TOHYO通信"
                 description="リアルタイム投票アプリ。Next.js で開発し、Cloudflare Workers にデプロイ。"
                 imageSrc="/tohyo-communication.png"
               />
+              </CarouselItem>
+              <CarouselItem className="basis-1/2">
+              <Link href="/regex">
+              <SectionCard
+                sectionCardId="regex-card"
+                title="regular-expression"
+                description="VM型正規表現エンジンとそれを用いたコマンドラインツールを実装。"
+                imageSrc="/regex.svg"
+              />
+              </Link>
               </CarouselItem>
 
             </CarouselContent>

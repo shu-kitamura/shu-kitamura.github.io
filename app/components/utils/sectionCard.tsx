@@ -20,7 +20,7 @@ type SectionCardProps = {
 
 export default function SectionCard({ sectionCardId, title, description, imageSrc }: SectionCardProps) {
   return (
-    <Card className="w-full h-full" id={sectionCardId}>
+    <Card className="w-full h-full hover:shadow-lg/30" id={sectionCardId}>
       <CardHeader>
         <CardTitle>
           {title}
