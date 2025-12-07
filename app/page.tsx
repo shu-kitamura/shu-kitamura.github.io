@@ -11,11 +11,6 @@ import { Label } from "@/components/ui/label"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
 
 import MyIcon from "@/app/icons/my-icon.svg";
 import GitHubIcon from "@/app/icons/github-mark.svg";
@@ -271,26 +266,3 @@ function ProjectCard({ title, body }: { title: string; body: string }) {
     </Card>
   );
 }
-
-function ServiceIcon({ href, size, imagePathLight, imagePathDark, altText }: { href: string; size: string; imagePathLight: string; imagePathDark: string; altText: string; }) {
-  return (
-    <Button variant="ghost" size="icon" asChild>
-      <Link href={href}>
-        <Avatar className={`w-${size} h-${size} rounded-none  scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100`}>
-          <AvatarImage src={imagePathLight} alt={altText} />
-          <AvatarFallback>{altText}</AvatarFallback>
-        </Avatar>
-        <Avatar className={`w-${size} h-${size} rounded-none absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0`}>
-          <AvatarImage src={imagePathDark} alt={altText} />
-          <AvatarFallback>{altText}</AvatarFallback>
-        </Avatar>
-      </Link>
-    </Button>
-  );
-}
-
-const IconWrapper = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex items-center justify-center w-10 h-10">
-    {children}
-  </div>
-);
