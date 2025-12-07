@@ -1,15 +1,8 @@
-import { JSX } from "react";
-import Image from "next/image"
+import Image from "next/image";
 
-import { AspectRatio } from "@/components/ui/aspect-ratio"
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 type SectionCardProps = {
   sectionCardId: string;
