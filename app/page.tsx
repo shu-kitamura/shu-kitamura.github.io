@@ -1,4 +1,10 @@
+"use client"
+
 import type { ReactNode } from "react";
+
+import { Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,7 +17,6 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar"
-import { HmrRefreshAction } from "next/dist/client/components/router-reducer/router-reducer-types";
 
 type SkillGroup = {
   category: string;
@@ -52,8 +57,8 @@ const socials = [
   {
     href: "mailto:shusei3316@yahoo.co.jp",
     size: "5",
-    imagePathLight: "/logos/email/mail.svg",
-    imagePathDark: "/logos/email/mail.svg",
+    imagePathLight: "/logos/email/mail-light.svg",
+    imagePathDark: "/logos/email/mail-dark.svg",
     alt: "Email"
   },
 ];
@@ -113,6 +118,8 @@ const careers = [
 ];
 
 export default function Home() {
+  const { setTheme } = useTheme()
+  const { theme } = useTheme()
   return (
     <div className="flex min-h-screen flex-col">
       <header className="py-6">
@@ -131,6 +138,13 @@ export default function Home() {
                   {link.label}
                 </Link>
               ))}
+              <Button variant="ghost" size="icon" onClick={() => {
+                setTheme(theme === "dark" ? "light" : "dark")
+              }}>
+                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                <span className="sr-only">change theme</span>
+              </Button>
             </div>
           </nav>
         </div>
@@ -184,7 +198,7 @@ export default function Home() {
         <SectionShell id="about" title="About">
           <div className="grid gap-7 md:grid-cols-3">
             {aboutCards.map((card) => (
-              <SurfaceCard key={card.title} title={card.title} body={card.body} />
+              <AboutCard key={card.title} title={card.title} body={card.body} />
             ))}
           </div>
         </SectionShell>
@@ -230,7 +244,7 @@ export default function Home() {
         <SectionShell id="projects" title="Projects">
           <div className="grid gap-7 md:grid-cols-3">
             {projects.map((project) => (
-              <SectionCard key={project.title} title={project.title} body={project.description} />
+              <ProjectCard key={project.title} title={project.title} body={project.description} />
             ))}
           </div>
         </SectionShell>
@@ -279,7 +293,20 @@ function SurfaceCard({ title, body }: { title: string; body: string }) {
   );
 }
 
-function SectionCard({ title, body }: { title: string; body: string }) {
+function AboutCard({ title, body }: { title: string; body: string }) {
+  return (
+    <Card className="w-full h-full border-none shadow-md hover:shadow-lg/20 transition hover:-translate-y-2">
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p>{body}</p>
+      </CardContent>
+    </Card>
+  );
+}
+
+function ProjectCard({ title, body }: { title: string; body: string }) {
   return (
     <Card className="w-full h-full border-none shadow-md hover:shadow-lg/20 transition hover:-translate-y-2">
       <CardHeader>
