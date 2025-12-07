@@ -284,15 +284,6 @@ function SectionShell({ id, title, children }: { id: string; title: string; chil
   );
 }
 
-function SurfaceCard({ title, body }: { title: string; body: string }) {
-  return (
-    <div className="rounded-2xl bg-white/90 p-7 shadow-md ring-1 ring-slate-100 transition hover:-translate-y-2 hover:shadow-lg/20 dark:bg-slate-800/80 dark:ring-white/10">
-      <h3 className="text-lg font-bold text-slate-900 dark:text-white">{title}</h3>
-      <p className="mt-3 text-sm text-slate-700 dark:text-slate-200">{body}</p>
-    </div>
-  );
-}
-
 function AboutCard({ title, body }: { title: string; body: string }) {
   return (
     <Card className="w-full h-full border-none shadow-md hover:shadow-lg/20 transition hover:-translate-y-2">
