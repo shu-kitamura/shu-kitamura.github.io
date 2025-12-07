@@ -2,11 +2,10 @@
 
 import type { ReactNode } from "react";
 
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun, Mail } from "lucide-react"
 import { useTheme } from "next-themes";
 
 import Link from "next/link";
-import Image from "next/image";
 
 import { Label } from "@/components/ui/label"
 
@@ -17,6 +16,11 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar"
+
+import MyIcon from "@/app/icons/my-icon.svg";
+import GitHubIcon from "@/app/icons/github-mark.svg";
+import XIcon from "@/app/icons/x-mark.svg";
+import ZennIcon from "@/app/icons/zenn-mark.svg";
 
 type SkillGroup = {
   category: string;
@@ -30,37 +34,6 @@ const navLinks = [
   { href: "#skill", label: "Skill" },
   { href: "#projects", label: "Projects" },
   { href: "#career", label: "Career" },
-];
-
-const socials = [
-  {
-    href: "https://x.com/prog_shu",
-    size: "5",
-    imagePathLight: "/logos/x/x-mark-light.svg",
-    imagePathDark: "/logos/x/x-mark-dark.svg",
-    alt: "X"
-  },
-  {
-    href: "https://github.com/shu-kitamura",
-    size: "5",
-    imagePathLight: "/logos/github/github-mark-light.svg",
-    imagePathDark: "/logos/github/github-mark-dark.svg",
-    alt: "GitHub"
-  },
-  {
-    href: "https://zenn.dev/shu_kitamura",
-    size: "5",
-    imagePathLight: "/logos/zenn/zenn-mark.svg",
-    imagePathDark: "/logos/zenn/zenn-mark.svg",
-    alt: "Zenn"
-  },
-  {
-    href: "mailto:shusei3316@yahoo.co.jp",
-    size: "5",
-    imagePathLight: "/logos/email/mail-light.svg",
-    imagePathDark: "/logos/email/mail-dark.svg",
-    alt: "Email"
-  },
 ];
 
 const aboutCards = [
@@ -156,20 +129,7 @@ export default function Home() {
           <div className="pointer-events-none absolute right-0 top-0 h-56 w-56 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-400/20" />
           <div className="relative flex flex-col items-center">
             <Label>
-              <Image
-                src="/icon-light.svg"
-                alt="shu-kitamura icon"
-                width={150}
-                height={150}
-                className="w-35 scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100"
-              />
-              <Image
-                src="/icon-dark.svg"
-                alt="shu-kitamura icon"
-                width={150}
-                height={150}
-                className="absolute w-35 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
-              />
+              <MyIcon width={200} height={200} />
             </Label>
             <h1 className="mt-3 text-4xl font-black text-slate-900 dark:text-white sm:text-5xl">
               shu-kitamura
@@ -181,16 +141,18 @@ export default function Home() {
               Software Developer
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm font-semibold">
-              {socials.map((social) => (
-                <ServiceIcon
-                  key={social.href}
-                  href={social.href}
-                  size={social.size}
-                  imagePathLight={social.imagePathLight}
-                  imagePathDark={social.imagePathDark}
-                  altText={social.alt}
-                />
-              ))}
+              <Link href="https://github.com/shu-kitamura">
+                <GitHubIcon className="w-10 h-10 hover:bg-slate-200 dark:hover:bg-slate-700" />
+              </Link>
+              <Link href="https://x.com/prog_shu">
+                <XIcon className="w-10 h-10 hover:bg-slate-200 dark:hover:bg-slate-700" />
+              </Link>
+              <Link href="https://zenn.dev/shu_kitamura">
+                <ZennIcon className="w-10 h-10 hover:bg-slate-200 dark:hover:bg-slate-700" />
+              </Link>
+              <Link href="mailto:shusei3316@yahoo.co.jp">
+                <Mail className="w-10 h-10 hover:bg-slate-200 dark:hover:bg-slate-700" />
+              </Link>
             </div>
           </div>
         </section>
@@ -326,3 +288,9 @@ function ServiceIcon({ href, size, imagePathLight, imagePathDark, altText }: { h
     </Button>
   );
 }
+
+const IconWrapper = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex items-center justify-center w-10 h-10">
+    {children}
+  </div>
+);
