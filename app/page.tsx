@@ -1,5 +1,17 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import { Label } from "@/components/ui/label"
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button"
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
+import { HmrRefreshAction } from "next/dist/client/components/router-reducer/router-reducer-types";
 
 type SkillGroup = {
   category: string;
@@ -16,23 +28,48 @@ const navLinks = [
 ];
 
 const socials = [
-  { href: "https://x.com/prog_shu", label: "X" },
-  { href: "https://github.com/shu-kitamura", label: "GitHub" },
-  { href: "mailto:hello@shu-kita.net", label: "Email" },
+  {
+    href: "https://x.com/prog_shu",
+    size: "5",
+    imagePathLight: "/logos/x/x-mark-light.svg",
+    imagePathDark: "/logos/x/x-mark-dark.svg",
+    alt: "X"
+  },
+  {
+    href: "https://github.com/shu-kitamura",
+    size: "5",
+    imagePathLight: "/logos/github/github-mark-light.svg",
+    imagePathDark: "/logos/github/github-mark-dark.svg",
+    alt: "GitHub"
+  },
+  {
+    href: "https://zenn.dev/shu_kitamura",
+    size: "5",
+    imagePathLight: "/logos/zenn/zenn-mark.svg",
+    imagePathDark: "/logos/zenn/zenn-mark.svg",
+    alt: "Zenn"
+  },
+  {
+    href: "mailto:shusei3316@yahoo.co.jp",
+    size: "5",
+    imagePathLight: "/logos/email/mail.svg",
+    imagePathDark: "/logos/email/mail.svg",
+    alt: "Email"
+  },
 ];
 
 const aboutCards = [
   {
-    title: "何をしている人？",
-    body: "インフラ運用と自動化が好きです。面倒なことを見つけて、楽にする仕組みを考えています。",
+    title: "経歴",
+    body: "SIerです。少し前までHadoopのテクニカルサポートをしていました。今はサーバ開発・保守をしています。",
   },
   {
     title: "得意なこと",
-    body: "Python・Shell Scriptでの自動化、Linuxトラブルシュート、Rustでの小物づくり。",
+    body: "Python・Shell Scriptでの自動化。ネットワーク（TCP/IP, Ethernet）。Linuxサーバ運用・障害解析。",
   },
   {
-    title: "最近ハマっていること",
-    body: "eBPF、正規表現の仕組み、OSSコントリビュート。",
+    title: "興味",
+    body: "Webアプリ開発。特にバックエンド。最近はNext.jsやFastAPIを触っています。",
   },
 ];
 
@@ -103,11 +140,27 @@ export default function Home() {
         <section className="relative overflow-hidden py-20 text-center">
           <div className="pointer-events-none absolute -left-16 -top-10 h-56 w-56 rounded-full bg-orange-200/40 blur-3xl dark:bg-orange-400/20" />
           <div className="pointer-events-none absolute right-0 top-0 h-56 w-56 rounded-full bg-cyan-200/40 blur-3xl dark:bg-cyan-400/20" />
-          <div className="relative">
+          <div className="relative flex flex-col items-center">
+            <Label>
+              <Image
+                src="/icon-light.svg"
+                alt="shu-kitamura icon"
+                width={150}
+                height={150}
+                className="w-35 scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100"
+              />
+              <Image
+                src="/icon-dark.svg"
+                alt="shu-kitamura icon"
+                width={150}
+                height={150}
+                className="absolute w-35 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
+              />
+            </Label>
             <h1 className="mt-3 text-4xl font-black text-slate-900 dark:text-white sm:text-5xl">
               shu-kitamura
             </h1>
-            <div className="mt-4 text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-orange-500 sm:text-[26px]">
+            <div className="mt-4 text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-orange-500 sm:text-3xl">
               めんどうを、ちょっと楽しくする
             </div>
             <p className="mt-5 text-base text-slate-700 dark:text-slate-200 sm:text-lg">
@@ -115,13 +168,14 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm font-semibold">
               {socials.map((social) => (
-                <Link
+                <ServiceIcon
                   key={social.href}
                   href={social.href}
-                  className="rounded-full bg-gradient-to-r from-cyan-50 to-orange-50 px-4 py-2 text-slate-800 shadow-sm ring-1 ring-cyan-100/70 transition hover:-translate-y-0.5 hover:shadow-md dark:from-slate-800 dark:to-slate-700 dark:text-slate-100 dark:ring-white/10"
-                >
-                  {social.label}
-                </Link>
+                  size={social.size}
+                  imagePathLight={social.imagePathLight}
+                  imagePathDark={social.imagePathDark}
+                  altText={social.alt}
+                />
               ))}
             </div>
           </div>
@@ -136,7 +190,7 @@ export default function Home() {
         </SectionShell>
 
         <SectionShell id="skill" title="Skill & Certification">
-          <div className="overflow-hidden rounded-2xl bg-white/95 shadow-[0_16px_36px_rgba(0,0,0,0.08)] ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-[0_28px_56px_rgba(0,0,0,0.12)] dark:bg-slate-900/60 dark:ring-white/10">
+          <div className="overflow-hidden rounded-2xl bg-white/95 shadow-md ring-1 ring-slate-100 transition hover:-translate-y-2 hover:shadow-lg/20 dark:bg-slate-900/60 dark:ring-white/10">
             <table className="w-full border-collapse text-sm text-slate-800 dark:text-slate-100">
               <thead className="bg-slate-50 text-left text-sm font-semibold text-slate-900 dark:bg-slate-800 dark:text-white">
                 <tr>
@@ -176,13 +230,13 @@ export default function Home() {
         <SectionShell id="projects" title="Projects">
           <div className="grid gap-7 md:grid-cols-3">
             {projects.map((project) => (
-              <SurfaceCard key={project.title} title={project.title} body={project.description} />
+              <SectionCard key={project.title} title={project.title} body={project.description} />
             ))}
           </div>
         </SectionShell>
 
         <SectionShell id="career" title="Career">
-          <div className="relative overflow-hidden rounded-2xl bg-white/95 p-8 shadow-[0_16px_36px_rgba(0,0,0,0.08)] ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-[0_28px_56px_rgba(0,0,0,0.12)] dark:bg-slate-900/60 dark:ring-white/10">
+          <div className="relative overflow-hidden rounded-2xl bg-white/95 p-8 shadow-md ring-1 ring-slate-100 transition hover:-translate-y-2 hover:shadow-lg/20 dark:bg-slate-900/60 dark:ring-white/10">
             <div className="absolute left-6 top-10 bottom-10 w-[2px] bg-gradient-to-b from-cyan-400 to-transparent" />
             <div className="space-y-6">
               {careers.map((career) => (
@@ -218,9 +272,39 @@ function SectionShell({ id, title, children }: { id: string; title: string; chil
 
 function SurfaceCard({ title, body }: { title: string; body: string }) {
   return (
-    <div className="rounded-2xl bg-white/90 p-7 shadow-[0_16px_36px_rgba(0,0,0,0.08)] ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-[0_28px_56px_rgba(0,0,0,0.12)] dark:bg-slate-800/80 dark:ring-white/10">
+    <div className="rounded-2xl bg-white/90 p-7 shadow-md ring-1 ring-slate-100 transition hover:-translate-y-2 hover:shadow-lg/20 dark:bg-slate-800/80 dark:ring-white/10">
       <h3 className="text-lg font-bold text-slate-900 dark:text-white">{title}</h3>
       <p className="mt-3 text-sm text-slate-700 dark:text-slate-200">{body}</p>
     </div>
+  );
+}
+
+function SectionCard({ title, body }: { title: string; body: string }) {
+  return (
+    <Card className="w-full h-full border-none shadow-md hover:shadow-lg/20 transition hover:-translate-y-2">
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p>{body}</p>
+      </CardContent>
+    </Card>
+  );
+}
+
+function ServiceIcon({ href, size, imagePathLight, imagePathDark, altText }: { href: string; size: string; imagePathLight: string; imagePathDark: string; altText: string; }) {
+  return (
+    <Button variant="ghost" size="icon" asChild>
+      <Link href={href}>
+        <Avatar className={`w-${size} h-${size} rounded-none  scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100`}>
+          <AvatarImage src={imagePathLight} alt={altText} />
+          <AvatarFallback>{altText}</AvatarFallback>
+        </Avatar>
+        <Avatar className={`w-${size} h-${size} rounded-none absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0`}>
+          <AvatarImage src={imagePathDark} alt={altText} />
+          <AvatarFallback>{altText}</AvatarFallback>
+        </Avatar>
+      </Link>
+    </Button>
   );
 }
