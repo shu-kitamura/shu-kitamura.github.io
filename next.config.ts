@@ -6,17 +6,21 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     disableStaticImages: true, // importした画像の型定義設定を無効にする
   },
-  webpack: (config) => {
-   config.module.rules.push({
-     test: /\.svg$/,
-     use: [
-       {
-         loader: "@svgr/webpack",
-       },
-     ],
-   });
-   return config;
- },
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              icon: true,
+            },
+          },
+        ],
+        as: '*.js',
+      },
+    },
+  },
 };
 
 export default nextConfig;
