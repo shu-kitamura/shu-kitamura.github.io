@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
             },
           },
         ],
-        as: '*.js',
+        as: '*.ts',
       },
     },
   },
