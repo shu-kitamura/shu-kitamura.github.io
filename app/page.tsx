@@ -118,7 +118,7 @@ export default function Home() {
   const { theme } = useTheme()
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="py-6">
+      <header className="py-3 sticky top-0 z-50 bg-white/95 backdrop-blur dark:bg-slate-900/60">
         <div className={containerClass}>
           <nav className="flex items-center justify-between">
             <div className="invisible sm:visible text-xs md:text-lg font-black uppercase tracking-[0.28em] text-slate-900 dark:text-slate-50">
