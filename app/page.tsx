@@ -120,8 +120,8 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <header className="py-3 sticky top-0 z-50 bg-white/95 backdrop-blur dark:bg-slate-900/60">
         <div className={containerClass}>
-          <nav className="flex items-center justify-between">
-            <div className="invisible sm:visible text-xs md:text-lg font-black uppercase tracking-[0.28em] text-slate-900 dark:text-slate-50">
+          <nav className="flex items-center justify-end sm:justify-between">
+            <div className="hidden sm:block text-lg font-black uppercase tracking-[0.28em] text-slate-900 dark:text-slate-50">
               shu-kitamura
             </div>
             <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200">
