@@ -229,9 +229,9 @@ export default function Home() {
         <SectionShell id="projects" title="Projects">
           <div className="flex justify-center">
             <Carousel className="w-9/10">
-              <CarouselContent className="flex items-center py-10">
+              <CarouselContent className="py-10">
                 {projects.map((project) => (
-                  <CarouselItem key={project.title} className="basis-1/3 w-full h-full">
+                  <CarouselItem key={project.title} className="basis-full md:basis-1/2 lg:basis-1/3 w-full h-full max-w-[300px] px-4">
                     <ProjectCard
                       title={project.title}
                       description={project.description}
@@ -301,14 +301,17 @@ function ProjectCard({ title, description, imgSrc, imgAlt }: { title: string; de
       <CardHeader>
         <CardTitle>{title}</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-10">
+      <CardContent className="flex flex-col space-y-10">
         <Image
           src={imgSrc}
           alt={imgAlt}
           width={810}
           height={799}
+          className="aspect-square w-full object-contain"
         />
-        <p>{description}</p>
+        <div className="min-h-[150px]">
+          <p>{description}</p>
+        </div>
       </CardContent>
     </Card>
   );
