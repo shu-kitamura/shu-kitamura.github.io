@@ -121,7 +121,7 @@ export default function Home() {
       <header className="py-6">
         <div className={containerClass}>
           <nav className="flex items-center justify-between">
-            <div className="text-xs md:text-lg font-black uppercase tracking-[0.28em] text-slate-900 dark:text-slate-50">
+            <div className="invisible sm:visible text-xs md:text-lg font-black uppercase tracking-[0.28em] text-slate-900 dark:text-slate-50">
               shu-kitamura
             </div>
             <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200">
