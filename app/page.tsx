@@ -6,11 +6,19 @@ import { Moon, Sun, Mail } from "lucide-react"
 import { useTheme } from "next-themes";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { Label } from "@/components/ui/label"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 import MyIcon from "@/app/components/icons/myIcon";
 import GitHubIcon from "@/app/components/icons/github";
@@ -75,10 +83,30 @@ const skillGroups: SkillGroup[] = [
 ];
 
 const projects = [
-  { title: "投票アプリ", description: "みんなの意見を、その場で見える化。" },
-  { title: "正規表現エンジン", description: "仕組みを知りたくて作ったRust製エンジン。" },
-  { title: "OSS活動", description: "気になったところをちょっとずつ直します。" },
-];
+  {
+    title: "投票アプリ",
+    description: "みんなの意見を、その場で見える化。",
+    imgSrc: "/tohyo-communication.png",
+    imgAlt: "投票アプリのアイコン",
+  },
+  {
+    title: "正規表現エンジン",
+    description: "仕組みを知りたくて作ったRust製エンジン。",
+    imgSrc: "/regex.svg",
+    imgAlt: "正規表現エンジンのアイコン",
+  },
+  {
+    title: "Sniffnet",
+    description: "Rust製のネットワークモニタリングツール。ARPパケットのモニタリング機能を担当。依存ライブラリへのPRも実施。",
+    imgSrc: "/sniffnet.svg",
+    imgAlt: "Sniffnet(ネットワークモニタリングツール)のアイコン",
+  },
+  {
+    title: "Fjall",
+    description: "Rust製のKVS。Conpaction, Flush の実行回数カウント機能を実装。",
+    imgSrc: "/fjall.png",
+    imgAlt: "Fjall(KVS)のアイコン",
+  },];
 
 const careers = [
   { period: "2021.04 – 2025.03", detail: "Cloudera製品サポート（ログ調査・再現テスト）" },
@@ -199,10 +227,23 @@ export default function Home() {
         </SectionShell>
 
         <SectionShell id="projects" title="Projects">
-          <div className="grid gap-7 md:grid-cols-3">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} title={project.title} body={project.description} />
-            ))}
+          <div className="flex justify-center">
+            <Carousel className="w-9/10">
+              <CarouselContent className="flex items-center py-10">
+                {projects.map((project) => (
+                  <CarouselItem key={project.title} className="basis-1/3 w-full h-full">
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      imgSrc={project.imgSrc}
+                      imgAlt={project.imgAlt}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600" />
+              <CarouselNext className="bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600" />
+            </Carousel>
           </div>
         </SectionShell>
 
@@ -254,14 +295,20 @@ function AboutCard({ title, body }: { title: string; body: string }) {
   );
 }
 
-function ProjectCard({ title, body }: { title: string; body: string }) {
+function ProjectCard({ title, description, imgSrc, imgAlt }: { title: string; description: string; imgSrc: string; imgAlt: string }) {
   return (
     <Card className="w-full h-full border-none shadow-md hover:shadow-lg/20 transition hover:-translate-y-2">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
       </CardHeader>
-      <CardContent>
-        <p>{body}</p>
+      <CardContent className="space-y-10">
+        <Image
+          src={imgSrc}
+          alt={imgAlt}
+          width={810}
+          height={799}
+        />
+        <p>{description}</p>
       </CardContent>
     </Card>
   );
