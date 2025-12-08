@@ -121,10 +121,10 @@ export default function Home() {
       <header className="py-6">
         <div className={containerClass}>
           <nav className="flex items-center justify-between">
-            <div className="text-sm font-black uppercase tracking-[0.28em] text-slate-900 dark:text-slate-50">
-              Shu Kitamura
+            <div className="text-xs md:text-lg font-black uppercase tracking-[0.28em] text-slate-900 dark:text-slate-50">
+              shu-kitamura
             </div>
-            <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-slate-700 dark:text-slate-200">
+            <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -189,8 +189,8 @@ export default function Home() {
         </SectionShell>
 
         <SectionShell id="skill" title="Skill & Certification">
-          <div className="overflow-hidden rounded-2xl bg-white/95 shadow-md ring-1 ring-slate-100 transition hover:-translate-y-2 hover:shadow-lg/20 dark:bg-slate-900/60 dark:ring-white/10">
-            <table className="w-full border-collapse text-sm text-slate-800 dark:text-slate-100">
+          <div className="overflow-x-scroll lg:overflow-x-hidden rounded-2xl bg-white/95 shadow-md ring-1 ring-slate-100 transition hover:-translate-y-2 hover:shadow-lg/20 dark:bg-slate-900/60 dark:ring-white/10">
+            <table className="w-full border-collapse text-sm text-slate-800 dark:text-slate-100 min-w-[750px]">
               <thead className="bg-slate-50 text-left text-sm font-semibold text-slate-900 dark:bg-slate-800 dark:text-white">
                 <tr>
                   <th className="px-5 py-3">分類</th>
@@ -206,7 +206,7 @@ export default function Home() {
                       {index === 0 && (
                         <td
                           rowSpan={group.items.length}
-                          className="w-36 border-t border-slate-100 px-5 py-4 font-semibold text-slate-900 dark:border-white/10 dark:text-white"
+                          className="w-40 border-t border-slate-100 px-5 py-4 font-semibold text-slate-900 dark:border-white/10 dark:text-white"
                         >
                           {group.category}
                         </td>
@@ -264,7 +264,7 @@ export default function Home() {
       </main>
 
       <footer className="py-16 text-center text-sm text-slate-500 dark:text-slate-400">
-        © Shu Kitamura
+        © shu-kitamura
       </footer>
     </div>
   );
