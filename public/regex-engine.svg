@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Background -->
+  <rect width="128" height="128" fill="white" />
+
+  <!-- Regex text: (.*) -->
+  <text
+    x="64"
+    y="74"
+    text-anchor="middle"
+    font-family="monospace"
+    font-size="48"
+    fill="black"
+  >(.*)</text>
+
+  <!-- Subtle engine accent: underline -->
+  <line x1="32" y1="86" x2="96" y2="86" stroke="black" stroke-width="3" stroke-linecap="round" />
+</svg>

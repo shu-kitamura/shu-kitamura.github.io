@@ -85,27 +85,31 @@ const skillGroups: SkillGroup[] = [
 const projects = [
   {
     title: "投票アプリ",
-    description: "みんなの意見を、その場で見える化。",
+    description: "投票アプリ。結果をリアルタイムで更新し、みんなの意見をその場で見える化。イベントや会議で活用できます。",
     imgSrc: "/tohyo-communication.png",
     imgAlt: "投票アプリのアイコン",
+    href: "https://vote.shu-kita.net",
   },
   {
     title: "正規表現エンジン",
-    description: "仕組みを知りたくて作ったRust製エンジン。",
-    imgSrc: "/regex.svg",
+    description: "VM型正規表現エンジンとそれを使用したコマンド。正規表現の仕組みを理解するために一から実装しました。",
+    imgSrc: "/regex-engine.svg",
     imgAlt: "正規表現エンジンのアイコン",
+    href: "https://github.com/shu-kitamura/regular-expression"
   },
   {
     title: "Sniffnet",
-    description: "Rust製のネットワークモニタリングツール。ARPパケットのモニタリング機能を担当。依存ライブラリへのPRも実施。",
+    description: "Rust製のネットワークモニタリングツール。ARPパケットのモニタリング機能を実装。依存ライブラリ（etherparse）にLinux_SLLの解析機能を実装。",
     imgSrc: "/sniffnet.svg",
     imgAlt: "Sniffnet(ネットワークモニタリングツール)のアイコン",
+    href: "https://github.com/GyulyVGC/sniffnet"
   },
   {
     title: "Fjall",
     description: "Rust製のKVS。Conpaction, Flush の実行回数カウント機能を実装。",
     imgSrc: "/fjall.png",
     imgAlt: "Fjall(KVS)のアイコン",
+    href: "https://github.com/fjall-rs/fjall"
   },];
 
 const careers = [
@@ -232,12 +236,14 @@ export default function Home() {
               <CarouselContent className="py-10">
                 {projects.map((project) => (
                   <CarouselItem key={project.title} className="basis-1/1 md:basis-1/2 lg:basis-1/3 w-full h-full max-w-[300px] px-4">
-                    <ProjectCard
-                      title={project.title}
-                      description={project.description}
-                      imgSrc={project.imgSrc}
-                      imgAlt={project.imgAlt}
-                    />
+                    <Link href={project.href}>
+                      <ProjectCard
+                        title={project.title}
+                        description={project.description}
+                        imgSrc={project.imgSrc}
+                        imgAlt={project.imgAlt}
+                      />
+                    </Link>
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -309,7 +315,7 @@ function ProjectCard({ title, description, imgSrc, imgAlt }: { title: string; de
           height={799}
           className="aspect-square w-full object-contain"
         />
-        <div className="min-h-[150px]">
+        <div className="min-h-[180px]">
           <p>{description}</p>
         </div>
       </CardContent>
