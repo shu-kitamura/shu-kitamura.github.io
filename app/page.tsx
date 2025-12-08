@@ -12,10 +12,10 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button"
 
-import MyIcon from "@/app/icons/my-icon.svg";
-import GitHubIcon from "@/app/icons/github-mark.svg";
-import XIcon from "@/app/icons/x-mark.svg";
-import ZennIcon from "@/app/icons/zenn-mark.svg";
+import MyIcon from "@/app/components/icons/myIcon";
+import GitHubIcon from "@/app/components/icons/github";
+import XIcon from "@/app/components/icons/x";
+import ZennIcon from "@/app/components/icons/zenn";
 
 type SkillGroup = {
   category: string;
