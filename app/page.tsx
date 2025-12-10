@@ -42,15 +42,15 @@ const navLinks = [
 const aboutCards = [
   {
     title: "経歴",
-    body: "SIerです。少し前までHadoopのテクニカルサポートをしていました。今はサーバ開発・保守をしています。",
+    body: "SIerです。少し前までHadoopのサポートをしていました。今はドライバの評価・サポートをしています。",
   },
   {
     title: "得意なこと",
-    body: "Python・Shell Scriptでの自動化。ネットワーク（TCP/IP, Ethernet）。Linuxサーバ運用・障害解析。",
+    body: "Python・シェルスクリプトでの業務効率化・自動化。ネットワーク（TCP/IP, Ethernet）。",
   },
   {
     title: "興味",
-    body: "Webアプリ開発。特にバックエンド。最近はNext.jsやFastAPIを触っています。",
+    body: "Webアプリ開発。特にバックエンド。最近はNext.jsやFastAPIを触っています。学んだことは勉強会などでアウトプットしています。",
   },
 ];
 
@@ -58,7 +58,7 @@ const skillGroups: SkillGroup[] = [
   {
     category: "言語",
     items: [
-      { name: "Python", years: "4年", note: "業務自動化・個人開発" },
+      { name: "Python", years: "4年", note: "業務自動化のためのスクリプト作成" },
       { name: "Rust", years: "1年", note: "OSS / 個人開発" },
       { name: "Shell Script", years: "3年", note: "テスト・ログ収集自動化" },
     ],
@@ -67,8 +67,7 @@ const skillGroups: SkillGroup[] = [
     category: "OS・ミドルウェア",
     items: [
       { name: "Linux (RHEL, CentOS)", years: "4年", note: "運用・障害解析" },
-      { name: "PostgreSQL", years: "2年", note: "業務・個人開発" },
-      { name: "Apache Hadoop (Hive, HBase, Spark)", years: "3年", note: "データ基盤サポート" },
+      { name: "Apache Hadoop (Hive, HBase, Spark)", years: "3年", note: "テクニカルサポート" },
     ],
   },
   {
@@ -162,7 +161,7 @@ export default function Home() {
               shu-kitamura
             </h1>
             <div className="mt-4 text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-orange-500 sm:text-3xl">
-              めんどうを、ちょっと楽しくする
+              面倒駆動開発
             </div>
             <p className="mt-5 text-base text-slate-700 dark:text-slate-200 sm:text-lg">
               Software Developer
