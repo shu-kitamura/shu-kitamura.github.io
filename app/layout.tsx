@@ -21,8 +21,8 @@ const rounded = M_PLUS_Rounded_1c({
 });
 
 export const metadata: Metadata = {
-  title: "Shu Kitamura | Portfolio",
-  description: "インフラと自動化を楽しむエンジニアのポートフォリオ",
+  title: "shu-kitamura",
+  description: "shu-kitamura の個人サイト",
 };
 
 export default function RootLayout({
