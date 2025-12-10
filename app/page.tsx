@@ -58,16 +58,17 @@ const skillGroups: SkillGroup[] = [
   {
     category: "言語",
     items: [
-      { name: "Python", years: "4年", note: "業務自動化のためのスクリプト作成" },
-      { name: "Rust", years: "1年", note: "OSS / 個人開発" },
-      { name: "Shell Script", years: "3年", note: "テスト・ログ収集自動化" },
+      { name: "Python", years: "4年", note: "業務自動化スクリプトに使用" },
+      { name: "Rust", years: "1年", note: "OSS / 個人開発で使用" },
+      { name: "Shell Script", years: "4年", note: "テスト・ログ収集自動化に使用" },
     ],
   },
   {
     category: "OS・ミドルウェア",
     items: [
-      { name: "Linux (RHEL, CentOS)", years: "4年", note: "運用・障害解析" },
-      { name: "Apache Hadoop (Hive, HBase, Spark)", years: "3年", note: "テクニカルサポート" },
+      { name: "Apache Hadoop (Hive, HBase, Spark)", years: "4年", note: "業務でテクニカルサポートを実施" },
+      { name: "Linux (RHEL, CentOS)", years: "4年", note: "Hadoopの基盤として使用" },
+      { name: "PostgreSQL", years: "3年", note: "Hadoopシステムの内部で使用" },
     ],
   },
   {
@@ -77,6 +78,7 @@ const skillGroups: SkillGroup[] = [
       { name: "OSS-DB Silver・Gold", years: "-", note: "DB設計・運用知識" },
       { name: "LinuC Level 1–3", years: "-", note: "Linuxサーバ設計・運用" },
       { name: "AZ-104", years: "-", note: "Azure運用知識" },
+      { name: "AWS Developer Associate", years: "-", note: "AWSサービス開発知識(あと少しで期限切れ)" },
     ],
   },
 ];
@@ -199,7 +201,7 @@ export default function Home() {
                   <th className="px-5 py-3">分類</th>
                   <th className="px-5 py-3">名前</th>
                   <th className="px-5 py-3">年数</th>
-                  <th className="px-5 py-3">備考</th>
+                  <th className="px-5 py-3">用途・備考</th>
                 </tr>
               </thead>
               <tbody className="bg-white/80 dark:bg-transparent">
