@@ -10,6 +10,7 @@ import Image from "next/image";
 
 import { Label } from "@/components/ui/label"
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -86,6 +87,7 @@ const skillGroups: SkillGroup[] = [
 const projects = [
   {
     title: "投票アプリ",
+    type: "個人開発",
     description: "投票アプリ。結果をリアルタイムで更新し、みんなの意見をその場で見える化。イベントや会議で活用できます。",
     imgSrc: "/tohyo-communication.png",
     imgAlt: "投票アプリのアイコン",
@@ -93,6 +95,7 @@ const projects = [
   },
   {
     title: "正規表現エンジン",
+    type: "個人開発",
     description: "VM型正規表現エンジンとそれを使用したコマンド。正規表現の仕組みを理解するために一から実装しました。",
     imgSrc: "/regex-engine.svg",
     imgAlt: "正規表現エンジンのアイコン",
@@ -100,6 +103,7 @@ const projects = [
   },
   {
     title: "Sniffnet",
+    type: "OSS",
     description: "Rust製のネットワークモニタリングツール。ARPパケットのモニタリング機能を実装。依存ライブラリ（etherparse）にLinux_SLLの解析機能を実装。",
     imgSrc: "/sniffnet.svg",
     imgAlt: "Sniffnet(ネットワークモニタリングツール)のアイコン",
@@ -107,6 +111,7 @@ const projects = [
   },
   {
     title: "Fjall",
+    type: "OSS",
     description: "Rust製のKVS。Conpaction, Flush の実行回数カウント機能を実装。",
     imgSrc: "/fjall.png",
     imgAlt: "Fjall(KVS)のアイコン",
@@ -240,6 +245,7 @@ export default function Home() {
                     <Link href={project.href}>
                       <ProjectCard
                         title={project.title}
+                        type={project.type}
                         description={project.description}
                         imgSrc={project.imgSrc}
                         imgAlt={project.imgAlt}
@@ -302,11 +308,14 @@ function AboutCard({ title, body }: { title: string; body: string }) {
   );
 }
 
-function ProjectCard({ title, description, imgSrc, imgAlt }: { title: string; description: string; imgSrc: string; imgAlt: string }) {
+function ProjectCard({ title, type, description, imgSrc, imgAlt }: { title: string; type: string; description: string; imgSrc: string; imgAlt: string }) {
   return (
     <Card className="w-full h-full border-none shadow-md hover:shadow-lg/20 transition hover:-translate-y-2">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <div className="flex justify-between items-center">
+          <CardTitle>{title}</CardTitle>
+          <Badge className="">{type}</Badge>
+        </div>
       </CardHeader>
       <CardContent className="flex flex-col space-y-10">
         <Image
