@@ -69,7 +69,7 @@ const skillGroups: SkillGroup[] = [
     items: [
       { name: "Apache Hadoop (Hive, HBase, Spark)", years: "4年", note: "業務でテクニカルサポートを実施" },
       { name: "Linux (RHEL, CentOS)", years: "4年", note: "Hadoopの基盤として使用" },
-      { name: "PostgreSQL", years: "3年", note: "Hadoopシステムの内部で使用" },
+      { name: "PostgreSQL", years: "4年", note: "Hadoopシステムの内部で使用" },
     ],
   },
   {
