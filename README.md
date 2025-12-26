@@ -1,4 +1,4 @@
-# Shu Kitamura Portfolio
+# shu-kitamura Portfolio
 
 ## 概要
 shu-kitamura の個人サイトのソースです。  
