@@ -1,7 +1,7 @@
 [
   {
     "title": "投票アプリ",
-    "type": "個人開発",
+    "type": "personal",
     "description": "投票アプリ。結果をリアルタイムで更新し、みんなの意見をその場で見える化。イベントや会議で活用できます。",
     "imgSrc": "/tohyo-communication.png",
     "imgAlt": "投票アプリのアイコン",
@@ -9,7 +9,7 @@
   },
   {
     "title": "正規表現エンジン",
-    "type": "個人開発",
+    "type": "personal",
     "description": "VM型正規表現エンジンとそれを使用したコマンド。正規表現の仕組みを理解するために一から実装しました。",
     "imgSrc": "/regex-engine.svg",
     "imgAlt": "正規表現エンジンのアイコン",
@@ -17,7 +17,7 @@
   },
   {
     "title": "Sniffnet",
-    "type": "OSS",
+    "type": "oss",
     "description": "Rust製のネットワークモニタリングツール。ARPパケットのモニタリング機能を実装。依存ライブラリ（etherparse）にLinux_SLLの解析機能を実装。",
     "imgSrc": "/sniffnet.svg",
     "imgAlt": "Sniffnet(ネットワークモニタリングツール)のアイコン",
@@ -25,7 +25,7 @@
   },
   {
     "title": "Fjall",
-    "type": "OSS",
+    "type": "oss",
     "description": "Rust製のKVS。Conpaction, Flush の実行回数カウント機能を実装。",
     "imgSrc": "/fjall.png",
     "imgAlt": "Fjall(KVS)のアイコン",

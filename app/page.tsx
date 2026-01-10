@@ -7,11 +7,13 @@ import { Footer } from '@/app/components/layout/Footer';
 import { Header } from '@/app/components/layout/Header';
 import aboutCards from '@/data/about.json';
 import careers from '@/data/career.json';
-import projects from '@/data/project.json';
+import projectsData from '@/data/project.json';
 import skillGroups from '@/data/skill.json';
+import type { ProjectInfo } from '@/types/home';
 
 const containerClass =
   'mx-auto w-full max-w-6xl px-6 sm:px-10';
+const projects = projectsData as ProjectInfo[];
 
 export default function Home() {
   return (

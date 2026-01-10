@@ -7,10 +7,14 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import {
+  projectTypeLabels,
+  type ProjectType,
+} from '@/types/home';
 
 type ProjectCardProps = {
   title: string;
-  type: string;
+  type: ProjectType;
   description: string;
   imgSrc: string;
   imgAlt: string;
@@ -28,7 +32,7 @@ export function ProjectCard({
       <CardHeader>
         <div className="flex justify-between items-center">
           <CardTitle>{title}</CardTitle>
-          <Badge>{type}</Badge>
+          <Badge>{projectTypeLabels[type]}</Badge>
         </div>
       </CardHeader>
       <CardContent className="flex flex-col space-y-10">
