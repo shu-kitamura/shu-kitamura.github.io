@@ -1,4 +1,4 @@
-import type { SVGProps } from "react";
+import type { SVGProps } from 'react';
 
 const MyIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -15,4 +15,3 @@ const MyIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 export default MyIcon;
-

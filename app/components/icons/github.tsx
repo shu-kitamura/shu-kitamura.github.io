@@ -1,4 +1,4 @@
-import type { SVGProps } from "react";
+import type { SVGProps } from 'react';
 
 const GitHubIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -11,4 +11,3 @@ const GitHubIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 export default GitHubIcon;
-

@@ -1,28 +1,32 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, M_PLUS_Rounded_1c } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import {
+  Geist,
+  Geist_Mono,
+  M_PLUS_Rounded_1c,
+} from 'next/font/google';
+import './globals.css';
 
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from '@/components/theme-provider';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 const rounded = M_PLUS_Rounded_1c({
-  variable: "--font-rounded",
-  subsets: ["latin"],
-  weight: ["400", "700", "800"],
+  variable: '--font-rounded',
+  subsets: ['latin'],
+  weight: ['400', '700', '800'],
 });
 
 export const metadata: Metadata = {
-  title: "shu-kitamura",
-  description: "shu-kitamura の個人サイト",
+  title: 'shu-kitamura',
+  description: 'shu-kitamura の個人サイト',
 };
 
 export default function RootLayout({

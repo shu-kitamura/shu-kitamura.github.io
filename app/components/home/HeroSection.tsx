@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { Mail } from "lucide-react";
+import Link from 'next/link';
+import { Mail } from 'lucide-react';
 
-import { Label } from "@/components/ui/label";
-import GitHubIcon from "@/app/components/icons/github";
-import MyIcon from "@/app/components/icons/myIcon";
-import XIcon from "@/app/components/icons/x";
-import ZennIcon from "@/app/components/icons/zenn";
+import { Label } from '@/components/ui/label';
+import GitHubIcon from '@/app/components/icons/github';
+import MyIcon from '@/app/components/icons/myIcon';
+import XIcon from '@/app/components/icons/x';
+import ZennIcon from '@/app/components/icons/zenn';
 
 export function HeroSection() {
   return (

@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
+import Link from 'next/link';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#skill", label: "Skill" },
-  { href: "#projects", label: "Projects" },
-  { href: "#career", label: "Career" },
+  { href: '#about', label: 'About' },
+  { href: '#skill', label: 'Skill' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#career', label: 'Career' },
 ];
 
 type HeaderProps = {
@@ -20,7 +20,8 @@ type HeaderProps = {
 export function Header({ containerClass }: HeaderProps) {
   const { setTheme, theme } = useTheme();
 
-  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+  const toggleTheme = () =>
+    setTheme(theme === 'dark' ? 'light' : 'dark');
 
   return (
     <header className="py-3 sticky top-0 z-50 bg-white/95 backdrop-blur dark:bg-slate-900/60">
@@ -39,7 +40,11 @@ export function Header({ containerClass }: HeaderProps) {
                 {link.label}
               </Link>
             ))}
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+            >
               <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:rotate-100" />
               <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
               <span className="sr-only">change theme</span>

@@ -1,7 +1,12 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from '@/components/ui/badge';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 type ProjectCardProps = {
   title: string;
@@ -11,7 +16,13 @@ type ProjectCardProps = {
   imgAlt: string;
 };
 
-export function ProjectCard({ title, type, description, imgSrc, imgAlt }: ProjectCardProps) {
+export function ProjectCard({
+  title,
+  type,
+  description,
+  imgSrc,
+  imgAlt,
+}: ProjectCardProps) {
   return (
     <Card className="w-full h-full border-none shadow-md hover:shadow-lg/20 transition hover:-translate-y-2">
       <CardHeader>
