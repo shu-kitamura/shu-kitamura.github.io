@@ -26,16 +26,16 @@ export function HeroSection() {
           Software Developer
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm font-semibold">
-          <Link href="https://github.com/shu-kitamura">
+          <Link href="https://github.com/shu-kitamura" aria-label="GitHub">
             <GitHubIcon className="w-10 h-10 hover:bg-slate-200 dark:hover:bg-slate-700" />
           </Link>
-          <Link href="https://x.com/prog_shu">
+          <Link href="https://x.com/prog_shu" aria-label="X (Twitter)">
             <XIcon className="w-10 h-10 hover:bg-slate-200 dark:hover:bg-slate-700" />
           </Link>
-          <Link href="https://zenn.dev/shu_kitamura">
+          <Link href="https://zenn.dev/shu_kitamura" aria-label="Zenn">
             <ZennIcon className="w-10 h-10 hover:bg-slate-200 dark:hover:bg-slate-700" />
           </Link>
-          <Link href="mailto:shusei3316@yahoo.co.jp">
+          <Link href="mailto:shusei3316@yahoo.co.jp" aria-label="Email">
             <Mail className="w-10 h-10 hover:bg-slate-200 dark:hover:bg-slate-700" />
           </Link>
         </div>
